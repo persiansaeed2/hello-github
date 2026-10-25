@@ -106,6 +106,11 @@ class TodayViewModel(
         WordStatus.LATER -> 2
     }
 
+    /** All vocabulary entries, not just the currently unlocked lesson. */
+    fun allItems(): List<WordItem> = words
+        .map { word -> item(word, progress[word.id]) }
+        .sortedWith(compareBy({ it.word.lesson }, { it.word.order }, { it.word.term }))
+
     fun count(status: WordStatus): Int = items().count { it.status == status }
 
     /**
@@ -155,6 +160,26 @@ class TodayViewModel(
     }
 
     val totalWords: Int get() = words.size
+
+    /**
+     * Review counts by Jalali day for the calendar. Past-due reviews are grouped
+     * onto today, so overdue work remains visible instead of disappearing off-month.
+     */
+    fun calendarReviewCounts(year: Int, month: Int): Map<Int, Int> {
+        val result = mutableMapOf<Int, Int>()
+        val isCurrentMonth = today.year == year && today.month == month
+        progress.values
+            .filter { !it.isNew && it.dueEpochDay != null }
+            .forEach { state ->
+                val dueDay = state.dueEpochDay ?: return@forEach
+                val date = JalaliCalendar.fromEpochDay(dueDay)
+                val displayDate = if (dueDay < todayEpochDay && isCurrentMonth) today else date
+                if (displayDate.year == year && displayDate.month == month) {
+                    result[displayDate.day] = (result[displayDate.day] ?: 0) + 1
+                }
+            }
+        return result
+    }
 
     // --------------------------------------------------------------- session
 
