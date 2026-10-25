@@ -1,0 +1,14 @@
+[
+  { "word": "apple",  "meaning": "سیب",   "lesson": 1 },
+  { "word": "book",   "meaning": "کتاب",  "lesson": 1 },
+  { "word": "water",  "meaning": "آب",    "lesson": 1 },
+  { "word": "friend", "meaning": "دوست",  "lesson": 1 },
+  { "word": "school", "meaning": "مدرسه", "lesson": 1 },
+  { "word": "teacher","meaning": "معلم",  "lesson": 1 },
+  { "word": "window", "meaning": "پنجره", "lesson": 2 },
+  { "word": "garden", "meaning": "باغ",   "lesson": 2 },
+  { "word": "letter", "meaning": "نامه",  "lesson": 2 },
+  { "word": "market", "meaning": "بازار", "lesson": 2 },
+  { "word": "picture","meaning": "تصویر", "lesson": 2 },
+  { "word": "morning","meaning": "صبح",   "lesson": 2 }
+]
