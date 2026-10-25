@@ -195,7 +195,7 @@
     {
       "id": "b10",
       "word": "die Klasse",
-      "meaning": "کلاس، پایه تحصیلی",
+      "meaning": "کلاس؛ پایهٔ تحصیلی",
       "lesson": 1,
       "unit": "1.1 Schule und Bildung",
       "pos": "noun",
@@ -364,7 +364,7 @@
     {
       "id": "b28",
       "word": "die Leistung",
-      "meaning": "عملکرد، پیشرفت تحصیلی",
+      "meaning": "عملکرد؛ دستاورد؛ توانایی انجام کار",
       "lesson": 1,
       "unit": "1.1 Schule und Bildung",
       "pos": "noun",
@@ -1079,7 +1079,7 @@
     {
       "id": "b125",
       "word": "die Promotion",
-      "meaning": "دکترا (مرحله دکترا)",
+      "meaning": "اخذ درجهٔ دکتری؛ فرایند انجام رساله و دریافت مدرک دکتری",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "noun",
@@ -1134,7 +1134,7 @@
     {
       "id": "b135",
       "word": "die Sprechstunde",
-      "meaning": "ساعت ملاقات استاد",
+      "meaning": "ساعت ملاقات یا پاسخ‌گویی؛ زمان تعیین‌شده برای مراجعه به استاد یا پزشک",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "noun",
@@ -1190,7 +1190,7 @@
     {
       "id": "b144",
       "word": "die Vorlesung",
-      "meaning": "سخنرانی (کلاس درس دانشگاهی)",
+      "meaning": "درس دانشگاهی به شکل سخنرانی استاد؛ کلاس نظری",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "noun",
@@ -1305,7 +1305,7 @@
     {
       "id": "b156",
       "word": "die Hausarbeit",
-      "meaning": "تکلیف دانشگاهی (مقاله ترم)",
+      "meaning": "تکلیف نوشتاری یا مقالهٔ درسی؛ همچنین کار خانه، بسته به بافت",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "noun",
@@ -1645,7 +1645,7 @@
     {
       "id": "b211",
       "word": "die Studie",
-      "meaning": "مطالعه، پژوهش",
+      "meaning": "مطالعهٔ پژوهشی؛ تحقیق",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "noun",
@@ -1746,7 +1746,7 @@
     {
       "id": "b229",
       "word": "die These",
-      "meaning": "ادعای علمی، تز",
+      "meaning": "گزاره یا ادعایی که برای بحث و بررسی مطرح می‌شود؛ تز",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "noun",
@@ -1949,7 +1949,7 @@
     {
       "id": "b254",
       "word": "die Schale",
-      "meaning": "پوست، پوسته",
+      "meaning": "پوسته یا پوست؛ همچنین کاسه/ظرف کم‌عمق، بسته به بافت",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "noun",
@@ -2090,7 +2090,7 @@
     {
       "id": "b271",
       "word": "die Zutat",
-      "meaning": "ماده تشکیل‌دهنده، مواد لازم",
+      "meaning": "مادهٔ تشکیل‌دهنده؛ چیزی که برای تهیهٔ غذا یا ترکیب به کار می‌رود",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "noun",
@@ -2292,7 +2292,7 @@
     {
       "id": "b292",
       "word": "die Missernte",
-      "meaning": "کم‌محصولی، شکست محصول",
+      "meaning": "محصول‌دهی ناموفق؛ برداشت بسیار کم یا از بین رفتن محصول",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "noun",
@@ -3072,7 +3072,7 @@
     {
       "id": "b402",
       "word": "ein Kind zeugen",
-      "meaning": "بچه‌دار شدن (بارور کردن)",
+      "meaning": "باعث بارداری شدن؛ فرزندی به وجود آوردن",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -3492,7 +3492,7 @@
     {
       "id": "b454",
       "word": "die Narbe",
-      "meaning": "جای زخم",
+      "meaning": "جای زخم؛ اثر باقی‌مانده از زخم",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "noun",
@@ -3502,7 +3502,7 @@
     {
       "id": "b455",
       "word": "die Vorsorgeuntersuchung",
-      "meaning": "معاینه پیشگیرانه",
+      "meaning": "معاینهٔ غربالگری یا پیشگیرانه برای شناسایی زودهنگام بیماری",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "noun",
@@ -3634,7 +3634,7 @@
     {
       "id": "b471",
       "word": "die Infusion",
-      "meaning": "سرم",
+      "meaning": "تزریق وریدی مایع؛ سرم",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "noun",
@@ -4236,7 +4236,7 @@
     {
       "id": "b558",
       "word": "duften",
-      "meaning": "خوشبو بودن",
+      "meaning": "بوی خوش دادن؛ خوشبو بودن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "verb",
@@ -4857,7 +4857,7 @@
     {
       "id": "b638",
       "word": "die Waise",
-      "meaning": "یتیم",
+      "meaning": "یتیم؛ کودک یا فردی که یک یا هر دو والد خود را از دست داده است",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -4885,7 +4885,7 @@
     {
       "id": "b641",
       "word": "die Pflegefamilie",
-      "meaning": "خانواده سرپرست",
+      "meaning": "خانوادهٔ سرپرست که موقتاً از کودکِ خارج از خانوادهٔ زیستی مراقبت می‌کند",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -4966,7 +4966,7 @@
     {
       "id": "b650",
       "word": "die Kinderkrippe",
-      "meaning": "مهدکودک (شیرخوارگاه)",
+      "meaning": "مرکز نگهداری روزانهٔ نوزادان و کودکان خردسال",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -5208,7 +5208,7 @@
     {
       "id": "b686",
       "word": "die Schlüsselqualifikationen",
-      "meaning": "مهارت‌های کلیدی",
+      "meaning": "مهارت‌های کلیدی و قابل انتقال، مانند ارتباط مؤثر و حل مسئله",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "noun",
@@ -5280,7 +5280,7 @@
     {
       "id": "b702",
       "word": "die Stelle",
-      "meaning": "شغل، پست",
+      "meaning": "موقعیت شغلی یا پست؛ همچنین محل/نقطه، بسته به بافت",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "noun",
@@ -5537,7 +5537,7 @@
     {
       "id": "b737",
       "word": "die Verwaltung",
-      "meaning": "اداره، مدیریت",
+      "meaning": "اداره و امور اداری؛ همچنین مدیریت",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "noun",
@@ -5586,7 +5586,7 @@
     {
       "id": "b742",
       "word": "die Währung",
-      "meaning": "واحد پول",
+      "meaning": "واحد پول یک کشور یا منطقه؛ ارز",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "noun",
@@ -5718,7 +5718,7 @@
     {
       "id": "b757",
       "word": "die Rate",
-      "meaning": "قسط",
+      "meaning": "قسط؛ همچنین نرخ یا نسبت، بسته به بافت",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "noun",
@@ -5850,7 +5850,7 @@
     {
       "id": "b779",
       "word": "die Gebühr",
-      "meaning": "هزینه، عوارض",
+      "meaning": "هزینهٔ خدمات؛ کارمزد یا عوارض",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "noun",
@@ -6633,7 +6633,7 @@
     {
       "id": "b885",
       "word": "die Veranstaltung",
-      "meaning": "رویداد، برنامه",
+      "meaning": "رویداد یا برنامهٔ سازمان‌یافته؛ مانند همایش، کنسرت یا نشست",
       "lesson": 13,
       "unit": "3.5 Freizeit",
       "pos": "noun",
@@ -6948,7 +6948,7 @@
     {
       "id": "b922",
       "word": "dünn besiedelt",
-      "meaning": "کم‌جمعیت",
+      "meaning": "با تراکم جمعیت کم؛ کم‌تراکم",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7141,7 +7141,7 @@
     {
       "id": "b946",
       "word": "die Norm",
-      "meaning": "هنجار",
+      "meaning": "استاندارد یا معیار؛ همچنین هنجار اجتماعی",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "noun",
@@ -7296,7 +7296,7 @@
     {
       "id": "b975",
       "word": "die Öffentlichkeit",
-      "meaning": "عموم مردم، افکار عمومی",
+      "meaning": "عموم مردم؛ فضای عمومی یا افکار عمومی",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "noun",
@@ -7522,7 +7522,7 @@
     {
       "id": "b1000",
       "word": "die Umgangssprache",
-      "meaning": "زبان محاوره",
+      "meaning": "زبان روزمره و محاوره‌ای",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "noun",
@@ -7540,7 +7540,7 @@
     {
       "id": "b1002",
       "word": "die Philologie",
-      "meaning": "فیلولوژی (زبان و ادبیات‌شناسی)",
+      "meaning": "زبان و ادبیات‌شناسی؛ مطالعهٔ زبان و متون تاریخی",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "noun",
@@ -7623,8 +7623,8 @@
     },
     {
       "id": "b1015",
-      "word": "ein Argument anführen /",
-      "meaning": "استدلالی ارائه دادن",
+      "word": "ein Argument anführen",
+      "meaning": "ein Argument anführen",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "phrase",
@@ -8192,7 +8192,7 @@
     {
       "id": "b1091",
       "word": "die Schiene",
-      "meaning": "ریل",
+      "meaning": "ریل؛ همچنین آتل یا وسیلهٔ ثابت‌کنندهٔ استخوان، بسته به بافت",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "noun",
@@ -8504,7 +8504,7 @@
     {
       "id": "b1127",
       "word": "die Stoßzeit",
-      "meaning": "ساعات اوج",
+      "meaning": "ساعت اوج ترافیک یا شلوغی",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "noun",
@@ -8671,7 +8671,7 @@
     {
       "id": "b1145",
       "word": "die Pauschalreise",
-      "meaning": "سفر با بسته تورسیستی",
+      "meaning": "سفر پکیجی/تور؛ سفری که خدماتی مانند حمل‌ونقل و اقامت با قیمت کلی از پیش تعیین شده ارائه می‌شود",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "noun",
@@ -8928,7 +8928,7 @@
     {
       "id": "b1181",
       "word": "die Sitte",
-      "meaning": "رسم",
+      "meaning": "رسم و عادت اجتماعی؛ آداب رایج",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "noun",
@@ -9012,7 +9012,7 @@
     {
       "id": "b1193",
       "word": "die Ware",
-      "meaning": "کالا",
+      "meaning": "کالا؛ محصولی که برای فروش عرضه می‌شود",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9022,7 +9022,7 @@
     {
       "id": "b1194",
       "word": "die Güter",
-      "meaning": "کالاها",
+      "meaning": "کالاها؛ همچنین اموال، بسته به بافت",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9153,7 +9153,7 @@
     {
       "id": "b1209",
       "word": "die Führungskraft",
-      "meaning": "مدیر ارشد",
+      "meaning": "مدیر؛ فرد دارای مسئولیت مدیریتی",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9329,7 +9329,7 @@
     {
       "id": "b1238",
       "word": "die Konjunktur",
-      "meaning": "چرخه اقتصادی، وضعیت اقتصادی",
+      "meaning": "وضعیت و روند فعالیت اقتصادی؛ رونق یا رکود اقتصادی",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9451,7 +9451,7 @@
     {
       "id": "b1255",
       "word": "die Nachfrage",
-      "meaning": "تقاضا",
+      "meaning": "تقاضا؛ میزان خواست یا نیاز بازار به کالا یا خدمت",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9718,7 +9718,7 @@
     {
       "id": "b1287",
       "word": "die Welle",
-      "meaning": "موج",
+      "meaning": "موج؛ همچنین موج یا روند گسترده، بسته به بافت",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -9992,7 +9992,7 @@
     {
       "id": "b1320",
       "word": "die Störung",
-      "meaning": "اختلال",
+      "meaning": "اختلال؛ مزاحمت یا نقص در عملکرد",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -10341,7 +10341,7 @@
     {
       "id": "b1368",
       "word": "die Folge",
-      "meaning": "قسمت",
+      "meaning": "قسمت یا اپیزود (برای مجموعه)؛ همچنین پیامد یا نتیجه",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "noun",
@@ -10693,7 +10693,7 @@
     {
       "id": "b1414",
       "word": "ein Gesetz beschließen / verabschieden",
-      "meaning": "قانونی را تصویب کردن",
+      "meaning": "ein Gesetz beschließen / ein Gesetz verabschieden",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "phrase",
@@ -10711,7 +10711,7 @@
     {
       "id": "b1417",
       "word": "die Vorschriften / die Gesetze befolgen / einhalten",
-      "meaning": "مقررات/قوانین را رعایت کردن",
+      "meaning": "از مقررات و قوانین پیروی کردن؛ قوانین را رعایت کردن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "noun",
@@ -11412,7 +11412,7 @@
     {
       "id": "b1516",
       "word": "die Flut",
-      "meaning": "مد",
+      "meaning": "سیل؛ همچنین مدِ دریا، بسته به بافت",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "noun",
@@ -11460,7 +11460,7 @@
     {
       "id": "b1521",
       "word": "die Umwelt schützen",
-      "meaning": "از محیط زیست محافظت کردن",
+      "meaning": "از محیط‌زیست محافظت کردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11478,7 +11478,7 @@
     {
       "id": "b1523",
       "word": "die Umwelt schonen",
-      "meaning": "به محیط زیست آسیب نزدن",
+      "meaning": "با مصرف مسئولانه و کاهش آسیب، از محیط‌زیست محافظت کردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11487,7 +11487,7 @@
     {
       "id": "b1524",
       "word": "die Umwelt zerstören",
-      "meaning": "محیط زیست را تخریب کردن",
+      "meaning": "محیط‌زیست را نابود کردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11496,7 +11496,7 @@
     {
       "id": "b1525",
       "word": "die Umwelt belasten",
-      "meaning": "محیط زیست را تحت فشار گذاشتن",
+      "meaning": "به محیط‌زیست فشار وارد کردن؛ موجب آلودگی یا آسیب محیطی شدن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11523,7 +11523,7 @@
     {
       "id": "b1528",
       "word": "die Umweltverschmutzung",
-      "meaning": "آلودگی محیط زیست",
+      "meaning": "آلودگی محیط‌زیست",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "noun",
@@ -12101,7 +12101,7 @@
     {
       "id": "b1596",
       "word": "die Quelle",
-      "meaning": "چشمه، منبع",
+      "meaning": "منبع؛ سرچشمه یا چشمه، بسته به بافت",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "noun",
@@ -12440,7 +12440,7 @@
     {
       "id": "b1631",
       "word": "die Feder",
-      "meaning": "پر",
+      "meaning": "پرِ پرنده؛ همچنین فنر، بسته به بافت",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
@@ -12516,7 +12516,7 @@
     {
       "id": "b1639",
       "word": "die Wurzel",
-      "meaning": "ریشه",
+      "meaning": "ریشه؛ همچنین ریشهٔ ریاضی یا منشأ چیزی",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
@@ -12728,7 +12728,7 @@
     {
       "id": "b1661",
       "word": "die Moral",
-      "meaning": "اخلاق",
+      "meaning": "اخلاق و اصول درست‌و‌نادرست؛ همچنین روحیهٔ گروه",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
