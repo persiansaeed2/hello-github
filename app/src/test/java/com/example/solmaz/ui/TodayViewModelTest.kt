@@ -56,7 +56,7 @@ class TodayViewModelTest {
         vm.startSession()
 
         assertTrue(vm.sessionActive)
-        assertEquals(3, vm.sessionTotal)
+        assertEquals(1, vm.sessionTotal) // ceil(3 / 4) = 1 word per round
         assertEquals("apple", vm.currentWord?.term)
         assertFalse(vm.revealed)
 
@@ -93,7 +93,7 @@ class TodayViewModelTest {
         assertEquals(1, vm.answeredWrong)
 
         // it is queued again at the end of this session
-        assertEquals(4, vm.sessionQueue.size)
+        assertEquals(2, vm.sessionQueue.size)
         assertEquals("a", vm.sessionQueue.last().id)
         assertEquals(WordStatus.LATER, vm.items().first { it.word.id == "a" }.status)
     }
@@ -101,16 +101,16 @@ class TodayViewModelTest {
     @Test
     fun `the session ends after every card is answered`() {
         vm.startSession()
-        repeat(3) {
+        while (vm.sessionActive) {
             vm.reveal()
             vm.answer(known = true)
         }
 
         assertFalse(vm.sessionActive)
-        assertEquals(3, vm.answeredCorrect)
+        assertEquals(1, vm.answeredCorrect) // the round only had one word
         assertEquals(0, vm.answeredWrong)
-        // lesson 1 is done, so the screen has already moved on to lesson 2
-        assertEquals(2, vm.lesson)
+        // two words of lesson 1 are still unread, so the lesson stays
+        assertEquals(1, vm.lesson)
         assertEquals(2, vm.todayTotal)
     }
 
@@ -125,11 +125,14 @@ class TodayViewModelTest {
     }
 
     @Test
-    fun `the next lesson unlocks once lesson one is fully known`() {
-        vm.startSession()
-        repeat(3) {
-            vm.reveal()
-            vm.answer(known = true)
+    fun `the next lesson unlocks once lesson one is fully read`() {
+        var guard = 0
+        while (vm.lesson == 1 && guard++ < 50) {
+            vm.startSession()
+            while (vm.sessionActive) {
+                vm.reveal()
+                vm.answer(known = true)
+            }
         }
 
         assertEquals(2, vm.lesson)
@@ -174,7 +177,8 @@ class TodayViewModelTest {
         assertEquals(4, vm.todayTotal)
 
         vm.startSession()
-        assertEquals(listOf("d", "e", "a", "b"), vm.sessionQueue.map { it.id })
+        // ceil(2 / 4) = 1 word per round of lesson 2
+        assertEquals(listOf("d"), vm.sessionQueue.map { it.id })
     }
 
     @Test

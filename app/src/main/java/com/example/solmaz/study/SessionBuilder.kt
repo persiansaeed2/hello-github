@@ -8,21 +8,30 @@ package com.example.solmaz.study
  * 2. then the due words of the current lesson,
  * 3. then the leftovers: due words from lessons already started
  *    («اگر وقت و حوصله داری، این‌ها از قبل مانده»),
- * 4. a round is 10 words by default.
+ * 4. every lesson is split into [PARTS_PER_LESSON] rounds, so a heavy lesson asks for
+ *    more words per round (more time) and a light lesson for fewer.
  *
  * Because new words always come first, a word can never stay unread: every word of a
  * lesson is introduced before that lesson's reviews start repeating.
  */
 object SessionBuilder {
 
-    const val DEFAULT_SESSION_SIZE = 10
+    /** One lesson is reviewed in this many rounds: chunk = ceil(lessonWords / 4). */
+    const val PARTS_PER_LESSON = 4
+
+    /** How many words one round of [lesson] holds (at least 1, 0 when empty). */
+    fun sessionSizeFor(words: List<Word>, lesson: Int): Int {
+        val count = words.count { it.lesson == lesson }
+        if (count <= 0) return 0
+        return maxOf(1, (count + PARTS_PER_LESSON - 1) / PARTS_PER_LESSON)
+    }
 
     fun nextSession(
         words: List<Word>,
         progress: Map<String, WordProgress>,
         lesson: Int,
         todayEpochDay: Long,
-        size: Int = DEFAULT_SESSION_SIZE,
+        size: Int = 0, // 0 = one quarter of the lesson
         includeEarlierLessons: Boolean = true
     ): List<Word> {
         val currentLessonWords = words.filter { it.lesson == lesson }
@@ -39,7 +48,8 @@ object SessionBuilder {
             emptyList()
         }
 
-        return (fresh + dueCurrent + dueEarlier).take(size)
+        val limit = if (size > 0) size else sessionSizeFor(words, lesson)
+        return (fresh + dueCurrent + dueEarlier).take(limit)
     }
 
     /** Due words from earlier lessons: the «مانده از قبل» section of the today screen. */

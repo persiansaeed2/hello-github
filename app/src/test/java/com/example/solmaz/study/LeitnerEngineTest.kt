@@ -94,18 +94,20 @@ class LeitnerEngineTest {
 
         val session = SessionBuilder.nextSession(words, emptyMap(), lesson = 2, todayEpochDay = today)
 
-        assertEquals(5, session.size) // lesson 2 only has five words
+        // one quarter of the lesson: ceil(5 / 4) = 2
+        assertEquals(2, session.size)
         assertTrue(session.all { it.lesson == 2 })
     }
 
     @Test
-    fun `a session is capped at ten words`() {
+    fun `a session is one quarter of the lesson`() {
         val words = (1..50).map { word("w$it", 6, it) }
         val session = SessionBuilder.nextSession(words, emptyMap(), lesson = 6, todayEpochDay = today)
 
-        assertEquals(10, session.size)
+        assertEquals(13, session.size) // ceil(50 / 4)
+        assertEquals(13, SessionBuilder.sessionSizeFor(words, 6))
         // new words are introduced in book order
-        assertEquals((1..10).map { "w$it" }, session.map { it.id })
+        assertEquals((1..13).map { "w$it" }, session.map { it.id })
     }
 
     @Test
@@ -121,7 +123,7 @@ class LeitnerEngineTest {
 
         // the lesson still has new words (w1..w11, w13), so they take the lead
         assertEquals("w1", session[0].id)
-        assertEquals(10, session.size)
+        assertEquals(4, session.size) // ceil(15 / 4)
         assertFalse(session.any { it.id == "w15" }) // not due yet
     }
 
@@ -138,7 +140,8 @@ class LeitnerEngineTest {
 
         val session = SessionBuilder.nextSession(words, progress, lesson = 2, todayEpochDay = today)
 
-        assertEquals(listOf("b1", "b2", "a1"), session.map { it.id })
+        // ceil(2 / 4) = 1 word per round of lesson 2, so the leftover waits for the next round
+        assertEquals(listOf("b1"), session.map { it.id })
         assertEquals(listOf("a1"), SessionBuilder.dueLeftovers(words, progress, 2, today).map { it.id })
     }
 

@@ -57,7 +57,9 @@ class WordSourceTest {
             todayEpochDay = 20_000L
         )
 
-        assertEquals(SessionBuilder.DEFAULT_SESSION_SIZE, session.size)
+        // one quarter of lesson 1 (65 words in the book) = 17
+        assertEquals(SessionBuilder.sessionSizeFor(words, 1), session.size)
+        assertTrue(session.size in 10..30)
         assertTrue(session.all { it.lesson == 1 })
     }
 }

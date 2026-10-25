@@ -118,6 +118,12 @@ class TodayViewModel(
 
     val todayTotal: Int get() = count(WordStatus.NEW) + count(WordStatus.DUE) + leftovers().size
 
+    /** Words in the next round: one quarter of the current lesson (see SessionBuilder). */
+    val plannedSessionSize: Int
+        get() = lesson?.let { number ->
+            SessionBuilder.nextSession(words, progress, number, todayEpochDay).size
+        } ?: 0
+
     // --------------------------------------------------------------- session
 
     var sessionQueue by mutableStateOf<List<Word>>(emptyList())

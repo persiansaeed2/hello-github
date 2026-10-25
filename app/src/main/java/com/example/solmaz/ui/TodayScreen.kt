@@ -61,8 +61,9 @@ fun statusLabel(item: WordItem): String = when (item.status) {
 fun TodayScreen(
     vm: TodayViewModel,
     onStart: () -> Unit,
+    userName: String? = null,
     loadError: String? = null,
-    onSpeak: (String) -> Unit = {},
+    onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
     modifier: Modifier = Modifier
 ) {
     val items = vm.items()
@@ -73,7 +74,7 @@ fun TodayScreen(
             contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 120.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item { Header(vm) }
+            item { Header(vm, userName) }
             item { TodayCard(vm) }
             item { Legend() }
 
@@ -85,13 +86,13 @@ fun TodayScreen(
                     item { SectionTitle("درس ${lesson.fa}$title") }
                 }
                 items(items, key = { it.word.id }) { item ->
-                    WordRow(item = item, onSpeak = onSpeak)
+                    WordRow(item = item, onSpeak = { term -> onSpeak(term, SpeechLang.GERMAN) })
                 }
 
                 if (leftovers.isNotEmpty()) {
                     item { SectionTitle("مانده از قبل — اگر وقت و حوصله داری", spaced = true) }
                     items(leftovers, key = { "left-${it.word.id}" }) { item ->
-                        WordRow(item = item, onSpeak = onSpeak)
+                        WordRow(item = item, onSpeak = { term -> onSpeak(term, SpeechLang.GERMAN) })
                     }
                 }
             }
@@ -99,7 +100,7 @@ fun TodayScreen(
 
         if (vm.todayTotal > 0) {
             StartBar(
-                words = vm.todayTotal,
+                words = vm.plannedSessionSize,
                 onStart = onStart,
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
@@ -111,10 +112,14 @@ fun TodayScreen(
 }
 
 @Composable
-private fun Header(vm: TodayViewModel) {
+private fun Header(vm: TodayViewModel, userName: String?) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Column(modifier = Modifier.weight(1f)) {
-            Text(text = "امروز", style = MaterialTheme.typography.headlineLarge, color = Ink)
+            Text(
+                text = if (userName.isNullOrBlank()) "سلام 👋" else "سلام $userName 👋",
+                style = MaterialTheme.typography.headlineLarge,
+                color = Ink
+            )
             Spacer(Modifier.height(4.dp))
             Text(
                 text = JalaliCalendar.formatLong(vm.today),

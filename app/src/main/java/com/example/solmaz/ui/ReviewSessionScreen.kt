@@ -51,7 +51,8 @@ private val Green = Color(0xFF2FBF8F)
 fun ReviewSessionScreen(
     vm: TodayViewModel,
     onExit: () -> Unit,
-    onSpeak: (String) -> Unit = {},
+    onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
+    userName: String? = null,
     modifier: Modifier = Modifier
 ) {
     val word = vm.currentWord
@@ -90,13 +91,14 @@ fun ReviewSessionScreen(
         Spacer(Modifier.height(24.dp))
 
         if (word == null) {
-            SessionSummary(vm)
+            SessionSummary(vm, userName)
         } else {
             WordCard(
                 term = word.term,
                 meaning = word.meaning,
                 revealed = vm.revealed,
-                onSpeak = { onSpeak(word.term) },
+                onSpeakGerman = { onSpeak(word.term, SpeechLang.GERMAN) },
+                onSpeakPersian = { onSpeak(word.meaning, SpeechLang.PERSIAN) },
                 modifier = Modifier.weight(1f)
             )
             Spacer(Modifier.height(18.dp))
@@ -129,7 +131,8 @@ private fun WordCard(
     term: String,
     meaning: String,
     revealed: Boolean,
-    onSpeak: () -> Unit,
+    onSpeakGerman: () -> Unit,
+    onSpeakPersian: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     GlassCard(
@@ -150,26 +153,9 @@ private fun WordCard(
                 textAlign = TextAlign.Center
             )
             Spacer(Modifier.height(10.dp))
-            Row(
-                modifier = Modifier
-                    .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.85f))
-                    .clickable(onClick = onSpeak)
-                    .padding(horizontal = 14.dp, vertical = 8.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Rounded.VolumeUp,
-                    contentDescription = "تلفظ",
-                    tint = Pink500,
-                    modifier = Modifier.size(18.dp)
-                )
-                Spacer(Modifier.size(6.dp))
-                Text(
-                    text = "تلفظ",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = Pink500
-                )
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                SpeakChip(text = "تلفظ آلمانی", onClick = onSpeakGerman)
+                if (revealed) SpeakChip(text = "تلفظ فارسی", onClick = onSpeakPersian)
             }
             Spacer(Modifier.height(18.dp))
             if (revealed) {
@@ -188,6 +174,31 @@ private fun WordCard(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun SpeakChip(text: String, onClick: () -> Unit) {
+    Row(
+        modifier = Modifier
+            .clip(CircleShape)
+            .background(Color.White.copy(alpha = 0.85f))
+            .clickable(onClick = onClick)
+            .padding(horizontal = 14.dp, vertical = 8.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Icon(
+            imageVector = Icons.Rounded.VolumeUp,
+            contentDescription = text,
+            tint = Pink500,
+            modifier = Modifier.size(18.dp)
+        )
+        Spacer(Modifier.size(6.dp))
+        Text(
+            text = text,
+            style = MaterialTheme.typography.labelMedium,
+            color = Pink500
+        )
     }
 }
 
@@ -260,13 +271,17 @@ private fun SessionProgress(current: Int, total: Int) {
 }
 
 @Composable
-private fun SessionSummary(vm: TodayViewModel) {
+private fun SessionSummary(vm: TodayViewModel, userName: String?) {
     GlassCard(modifier = Modifier.fillMaxWidth(), contentPadding = PaddingValues(24.dp)) {
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("این دور تمام شد", style = MaterialTheme.typography.headlineSmall, color = Ink)
+            Text(
+                text = if (userName.isNullOrBlank()) "این دور تمام شد" else "آفرین $userName، این دور تمام شد",
+                style = MaterialTheme.typography.headlineSmall,
+                color = Ink
+            )
             Spacer(Modifier.height(10.dp))
             Row(horizontalArrangement = Arrangement.spacedBy(24.dp)) {
                 SummaryStat("درست", vm.answeredCorrect, Green)
