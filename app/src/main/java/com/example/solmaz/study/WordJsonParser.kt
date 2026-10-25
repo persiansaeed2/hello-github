@@ -25,11 +25,18 @@ import org.json.JSONObject
  */
 object WordJsonParser {
 
-    private val TERM_KEYS = listOf("word", "term", "english", "en", "text", "لغت", "کلمه", "واژه")
-    private val MEANING_KEYS =
-        listOf("meaning", "translation", "persian", "fa", "farsi", "definition", "معنی", "ترجمه")
-    private val LESSON_KEYS = listOf("lesson", "dars", "unit", "chapter", "book_lesson", "درس")
-    private val ID_KEYS = listOf("id", "key", "code")
+    private val TERM_KEYS = listOf(
+        "word", "wort", "term", "deutsch", "german", "english", "en", "vokabel", "text",
+        "لغت", "کلمه", "واژه"
+    )
+    private val MEANING_KEYS = listOf(
+        "meaning", "translation", "übersetzung", "ubersetzung", "bedeutung",
+        "persian", "fa", "farsi", "definition", "معنی", "ترجمه"
+    )
+    private val LESSON_KEYS = listOf(
+        "lesson", "lektion", "kapitel", "einheit", "dars", "unit", "chapter", "درس"
+    )
+    private val ID_KEYS = listOf("id", "key", "code", "nummer", "nr")
     private val LESSON_NUMBER_KEYS = listOf("number", "lesson", "dars", "id", "no", "شماره", "درس")
 
     sealed interface Result {

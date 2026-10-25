@@ -50,6 +50,21 @@ class WordJsonParserTest {
     }
 
     @Test
+    fun `accepts german column names`() {
+        val result = success(
+            """[
+              {"Wort":"Apfel","Übersetzung":"سیب","Lektion":2},
+              {"Wort":"Buch","Bedeutung":"کتاب","Kapitel":"2"}
+            ]"""
+        )
+
+        assertEquals(2, result.words.size)
+        assertEquals(listOf(2, 2), result.words.map { it.lesson })
+        assertEquals("Apfel", result.words[0].term)
+        assertEquals("کتاب", result.words[1].meaning)
+    }
+
+    @Test
     fun `wrapped in a words key`() {
         val result = success("""{"words":[{"word":"a","meaning":"الف","lesson":1}]}""")
         assertEquals(1, result.words.size)
