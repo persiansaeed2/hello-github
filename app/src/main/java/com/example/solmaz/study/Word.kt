@@ -11,5 +11,7 @@ data class Word(
     val meaning: String,
     val lesson: Int,
     /** Position of the word inside the book, so new words are introduced in order. */
-    val order: Int = 0
+    val order: Int = 0,
+    /** Book unit label, e.g. «1.1 Schule und Bildung» — shown as the lesson title. */
+    val unitTitle: String = ""
 )

@@ -3,6 +3,8 @@ package com.example.solmaz.data
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import android.content.Context
+import com.example.solmaz.study.SessionBuilder
+import com.example.solmaz.study.WordJsonParser
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -18,14 +20,24 @@ class WordSourceTest {
     private val context: Context get() = ApplicationProvider.getApplicationContext()
 
     @Test
-    fun `sample asset is loaded when the real file is absent`() {
+    fun `the real words file is loaded`() {
         val result = WordSource(context).load()
 
         assertNull(result.error)
-        assertEquals(WordSource.SAMPLE_FILE, result.source)
-        assertEquals(12, result.words.size)
-        assertEquals(listOf(1, 2), result.words.map { it.lesson }.distinct())
+        assertEquals(WordSource.REAL_FILE, result.source)
+        assertTrue("expected the whole book, got ${result.words.size}", result.words.size > 1000)
         assertTrue(result.words.all { it.term.isNotBlank() && it.meaning.isNotBlank() })
+        assertEquals(1, result.words.first().lesson)
+        assertTrue(result.words.any { it.unitTitle.isNotBlank() })
+    }
+
+    @Test
+    fun `the sample asset still parses`() {
+        val raw = context.assets.open(WordSource.SAMPLE_FILE).bufferedReader().use { it.readText() }
+        val parsed = WordJsonParser.parse(raw)
+
+        assertTrue(parsed is WordJsonParser.Result.Success)
+        assertEquals(12, (parsed as WordJsonParser.Result.Success).words.size)
     }
 
     @Test
@@ -38,14 +50,14 @@ class WordSourceTest {
     @Test
     fun `word list feeds the session builder`() {
         val words = WordSource(context).load().words
-        val session = com.example.solmaz.study.SessionBuilder.nextSession(
+        val session = SessionBuilder.nextSession(
             words = words,
             progress = emptyMap(),
             lesson = 1,
             todayEpochDay = 20_000L
         )
 
-        assertEquals(6, session.size) // the sample lesson 1 has six words
+        assertEquals(SessionBuilder.DEFAULT_SESSION_SIZE, session.size)
         assertTrue(session.all { it.lesson == 1 })
     }
 }

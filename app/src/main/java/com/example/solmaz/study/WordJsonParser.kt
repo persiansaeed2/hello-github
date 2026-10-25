@@ -37,6 +37,7 @@ object WordJsonParser {
         "lesson", "lektion", "kapitel", "einheit", "dars", "unit", "chapter", "درس"
     )
     private val ID_KEYS = listOf("id", "key", "code", "nummer", "nr")
+    private val UNIT_TITLE_KEYS = listOf("unit", "unit_title", "unittitle", "lektionstitel")
     private val LESSON_NUMBER_KEYS = listOf("number", "lesson", "dars", "id", "no", "شماره", "درس")
 
     sealed interface Result {
@@ -149,7 +150,16 @@ object WordJsonParser {
             ?: 1
         val id = valueOf(json, ID_KEYS)?.trim()?.takeIf { it.isNotEmpty() } ?: "L$lesson:$term"
 
-        return Word(id = id, term = term, meaning = meaning, lesson = lesson, order = order)
+        val unitTitle = valueOf(json, UNIT_TITLE_KEYS)?.trim().orEmpty()
+
+        return Word(
+            id = id,
+            term = term,
+            meaning = meaning,
+            lesson = lesson,
+            order = order,
+            unitTitle = unitTitle
+        )
     }
 
     private fun lessonNumber(lessonObject: JSONObject, fallback: Int): Int =

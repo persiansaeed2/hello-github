@@ -81,7 +81,8 @@ fun TodayScreen(
                 item { EmptyWords(loadError) }
             } else {
                 vm.lesson?.let { lesson ->
-                    item { SectionTitle("درس ${lesson.fa}") }
+                    val title = vm.lessonTitle?.let { " — $it" }.orEmpty()
+                    item { SectionTitle("درس ${lesson.fa}$title") }
                 }
                 items(items, key = { it.word.id }) { item ->
                     WordRow(item = item, onSpeak = onSpeak)
@@ -155,7 +156,15 @@ private fun TodayCard(vm: TodayViewModel) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Chip(text = "${due.fa} نوبت مرور", container = Pink100, contentColor = Pink500)
             Chip(text = "${fresh.fa} تازه", container = Color(0xFFDDF8F1), contentColor = Color(0xFF0B5B4B))
-            vm.lesson?.let { Chip(text = "درس ${it.fa}", container = Color.White) }
+            vm.lesson?.let { lesson ->
+                Chip(
+                    text = buildString {
+                        append("درس ${lesson.fa}")
+                        vm.lessonTitle?.let { append(" · $it") }
+                    },
+                    container = Color.White
+                )
+            }
         }
     }
 }

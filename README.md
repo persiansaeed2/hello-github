@@ -85,6 +85,33 @@ app/src/main/java/com/example/solmaz/
 * رفت‌وبرگشت **هر روزِ** یک بازهٔ ۲۰ ساله
 * طول ماه‌ها، سال کبیسه (۱۴۰۳ کبیسه، ۱۴۰۴ نه)، شنبه‌اول بودن هفته و ارقام فارسی
 
+## دادهٔ کتاب (وارد شده)  📚
+
+کتاب: **Uni sicher – Wortschatzübungen für Fortgeschrittene**
+
+* **۱۳۸۷ لغت** در **۲۶ درس** (واحدهای کتاب: `1.1` … `5.3`)
+* هر درس اپ = یک واحد کتاب؛ ترتیب عددی درست (۴.۱۰ بعد از ۴.۹)
+* سرلغت با حرف تعریف (`die Schulpflicht`) برای یادگیری جنس + تلفظ آلمانی
+* ترجمهٔ فارسی از فیلد `fa` همان فایل
+
+بازتولید (`app/src/main/assets/words.json`):
+
+```bash
+python3 tools/import_book.py                      # 1387 لغت
+python3 tools/import_book.py --include-related    # + فرم‌های مرتبط (۳۴۱ مورد)
+```
+
+## آپلود لغات (CSV یا JSON)  ⬆️
+
+هر کدام را داشتی، در پوشهٔ `reference/` آپلود کن:
+
+* **CSV** → با `tools/csv_to_words_json.py` به JSON تبدیل می‌شود:
+  ```bash
+  python3 tools/csv_to_words_json.py reference/words.csv
+  ```
+  (جداکنندهٔ `,` `;` `Tab` خودکار، BOM و فایل cp1252 پشتیبانی می‌شود، ستون‌های آلمانی/انگلیسی/فارسی شناسایی می‌شوند)
+* **JSON** → اگر کلیدهایش با parser جور باشد مستقیم استفاده می‌شود؛ وگرنه فقط یک mapper کوچک اضافه می‌کنم.
+
 ## جای فایل PDF کتاب  📄
 
 فایل PDF را در `reference/` بگذار (اسم دلخواه، مثلاً `reference/book.pdf`) و بگو تا:

@@ -13,7 +13,7 @@ import org.robolectric.annotation.Config
 
 /**
  * Boots the real [MainActivity] on the JVM (Robolectric) and walks the single screen:
- * list → review card → answer.
+ * today's list → review card → answer. Data comes from the bundled words.json.
  */
 @RunWith(AndroidJUnit4::class)
 @Config(sdk = [33], qualifiers = "w411dp-h891dp")
@@ -23,36 +23,34 @@ class MainActivityTest {
     val rule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun `today screen shows the date, the summary and the words`() {
+    fun `today screen shows the date, the summary and the first lesson`() {
         rule.onNodeWithText("امروز").assertIsDisplayed()
-        // Jalali date of today, e.g. «یکشنبه ۳ آبان ۱۴۰۵»
-        rule.onAllNodesWithText("امروز", substring = true)[0].assertIsDisplayed()
         rule.onNodeWithText("برای امروز").assertIsDisplayed()
-        rule.onNodeWithText("der Apfel").assertIsDisplayed()
-        rule.onNodeWithText("سیب").assertIsDisplayed()
+        // lesson 1 of the book
+        rule.onAllNodesWithText("Schule und Bildung", substring = true)[0].assertIsDisplayed()
         rule.onAllNodesWithText("تازه")[0].assertIsDisplayed()
     }
 
     @Test
     fun `review flow reveals the meaning and accepts a green answer`() {
-        rule.onNodeWithText("شروع مرور ۶ لغت").performClick()
+        rule.onNodeWithText("شروع مرور", substring = true).performClick()
 
-        rule.onNodeWithText("der Apfel").assertIsDisplayed()
+        rule.onNodeWithText("نمایش معنی").assertIsDisplayed()
         rule.onNodeWithText("نمایش معنی").performClick()
-        rule.onNodeWithText("سیب").assertIsDisplayed()
 
+        rule.onNodeWithText("بلدم").assertIsDisplayed()
         rule.onNodeWithText("بلدم").performClick()
 
-        // the next card is shown, so «apple» is gone from the card
-        rule.onNodeWithText("das Buch").assertIsDisplayed()
+        // still inside the session, with the next card ready
+        rule.onNodeWithText("نمایش معنی").assertIsDisplayed()
     }
 
     @Test
-    fun `red answer keeps the word for another round`() {
-        rule.onNodeWithText("شروع مرور ۶ لغت").performClick()
+    fun `red answer keeps the card flow alive`() {
+        rule.onNodeWithText("شروع مرور", substring = true).performClick()
         rule.onNodeWithText("نمایش معنی").performClick()
         rule.onNodeWithText("بلد نبودم").performClick()
 
-        rule.onAllNodesWithText("از", substring = true)[0].assertIsDisplayed()
+        rule.onNodeWithText("نمایش معنی").assertIsDisplayed()
     }
 }

@@ -56,6 +56,16 @@ class TodayViewModel(
     /** The lesson the user is on — lessons unlock one after another. */
     val lesson: Int? get() = LessonPlan.currentLesson(words, progress, todayEpochDay)
 
+    /** Book title of the current lesson, e.g. «Schule und Bildung» (lesson 1.1). */
+    val lessonTitle: String?
+        get() = lesson?.let { number ->
+            words.firstOrNull { it.lesson == number && it.unitTitle.isNotBlank() }
+                ?.unitTitle
+                // «1.1 Schule und Bildung» -> «Schule und Bildung»
+                ?.substringAfter(' ', missingDelimiterValue = "")
+                ?.takeIf { it.isNotBlank() }
+        }
+
     // ------------------------------------------------------------------ list
 
     /** Every word of the current lesson with its colour-coded status. */
