@@ -2,4 +2,8 @@
 <resources>
     <!-- Soft white-to-pink window background used before Compose draws. -->
     <color name="window_background">#FFFFF7FA</color>
+    <!-- Launcher icon background (pink gradient is not possible in a plain color,
+         so the adaptive icon uses this solid tone). -->
+    <color name="ic_launcher_background">#FFFF5C8F</color>
 </resources>
+

@@ -26,7 +26,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.motalee.model.DayStat
 import com.example.motalee.model.JalaliCalendar
 import com.example.motalee.model.fa
 import com.example.motalee.model.formatMinutes

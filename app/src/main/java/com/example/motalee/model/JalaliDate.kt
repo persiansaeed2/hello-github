@@ -65,7 +65,8 @@ object JalaliCalendar {
 
     fun today(): JalaliDate = fromEpochDay(LocalDate.now().toEpochDay())
 
-    fun toEpochDay(date: JalaliDate): Long = toJdn(date.year, date.month, date.day) - EPOCH_JDN
+    fun toEpochDay(date: JalaliDate): Long =
+        toJdn(date.year, date.month, date.day).toLong() - EPOCH_JDN.toLong()
 
     fun fromEpochDay(epochDay: Long): JalaliDate = fromJdn((epochDay + EPOCH_JDN).toInt())
 

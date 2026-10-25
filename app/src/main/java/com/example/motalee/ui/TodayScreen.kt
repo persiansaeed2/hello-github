@@ -40,7 +40,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.motalee.model.DayStat
 import com.example.motalee.model.JalaliCalendar
 import com.example.motalee.model.StudySession
 import com.example.motalee.model.fa
