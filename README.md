@@ -139,6 +139,24 @@ app/src/main/assets/words.sample.json  ← دادهٔ نمونه (تا وقتی 
 > `IllegalArgumentException: Padding must be non-negative` کرش می‌کرد.
 > با `Modifier.offset` جایگزین شد و تست رگرسیون دارد.
 
+## تست‌ها (۴۷ تست، بدون نیاز به امولاتور)
+
+```bash
+./gradlew :app:testDebugUnitTest
+```
+
+| فایل | تعداد | چه چیزی را تضمین می‌کند |
+|---|---|---|
+| `JalaliDateTest` | ۷ | تبدیل دقیق شمسی/میلادی، ۷۳۰۵ روز رفت‌وبرگشت، کبیسه‌ها |
+| `LeitnerEngineTest` | ۱۵ | جعبه‌ها و فاصله‌ها، 🟢/🔴، جعبهٔ ۸، انتخاب ۱۰ لغت، قفل درس‌ها |
+| `WordJsonParserTest` | ۹ | همهٔ شکل‌های JSON، کلیدهای جایگزین، ردیف ناقص، ورودی خراب |
+| `WordSourceTest` | ۳ | خواندن واقعی assets و رسیدن لغات به موتور مرور |
+| `TodayViewModelTest` | ۱۰ | فهرست امروز، رنگ/وضعیت، شروع دور، 🟢/🔴، تکرار اشتباه، ذخیره‌سازی |
+| `MainActivityTest` | ۳ | اجرای واقعی اپ با **Robolectric**: تاریخ و فهرست، کارت لغت، 🟢 |
+
+> همین تست‌ها یک کرش واقعی را پیدا کردند: `AppBackground` با `padding` منفی اپ را در
+> لحظهٔ باز شدن می‌بست (`Padding must be non-negative`)؛ با `Modifier.offset` رفع شد.
+
 ## نکات فنی
 
 * `minSdk = 26` تا از `java.time` بدون desugaring استفاده شود؛ `compileSdk/targetSdk = 34`
