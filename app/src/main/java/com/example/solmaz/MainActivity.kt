@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -19,6 +20,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.solmaz.data.PrefsProgressStore
 import com.example.solmaz.data.WordSource
+import com.example.solmaz.ui.AndroidSpeaker
 import com.example.solmaz.ui.ReviewSessionScreen
 import com.example.solmaz.ui.TodayScreen
 import com.example.solmaz.ui.TodayViewModel
@@ -41,7 +43,15 @@ class MainActivity : ComponentActivity() {
                     )
                 }
                 val viewModel: TodayViewModel = viewModel(factory = factory)
-                SolmazApp(viewModel = viewModel, loadError = load.error)
+                val speaker = remember { AndroidSpeaker(context.applicationContext) }
+                DisposableEffect(speaker) {
+                    onDispose { speaker.shutdown() }
+                }
+                SolmazApp(
+                    viewModel = viewModel,
+                    loadError = load.error,
+                    onSpeak = speaker::speak
+                )
             }
         }
     }
@@ -53,7 +63,11 @@ class MainActivity : ComponentActivity() {
  * destination once it is asked for.
  */
 @Composable
-fun SolmazApp(viewModel: TodayViewModel, loadError: String? = null) {
+fun SolmazApp(
+    viewModel: TodayViewModel,
+    loadError: String? = null,
+    onSpeak: (String) -> Unit = {}
+) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Box(modifier = Modifier.fillMaxSize()) {
             AppBackground()
@@ -66,13 +80,15 @@ fun SolmazApp(viewModel: TodayViewModel, loadError: String? = null) {
                 if (viewModel.sessionActive) {
                     ReviewSessionScreen(
                         vm = viewModel,
-                        onExit = { viewModel.exitSession() }
+                        onExit = { viewModel.exitSession() },
+                        onSpeak = onSpeak
                     )
                 } else {
                     TodayScreen(
                         vm = viewModel,
                         onStart = { viewModel.startSession() },
-                        loadError = loadError
+                        loadError = loadError,
+                        onSpeak = onSpeak
                     )
                 }
             }

@@ -3,11 +3,15 @@ package com.example.solmaz.study
 /**
  * Builds the list of words for one practice round.
  *
- * Rules (confirmed with the product owner):
- * 1. a round only ever contains words of the chosen lesson — lessons are never mixed,
- * 2. words whose review date has arrived come first (oldest due date first),
- * 3. the remaining slots are filled with brand-new words, in book order,
+ * Order (confirmed with the product owner):
+ * 1. **new words of the current lesson first** — the lesson the user is on is the priority,
+ * 2. then the due words of the current lesson,
+ * 3. then the leftovers: due words from lessons already started
+ *    («اگر وقت و حوصله داری، این‌ها از قبل مانده»),
  * 4. a round is 10 words by default.
+ *
+ * Because new words always come first, a word can never stay unread: every word of a
+ * lesson is introduced before that lesson's reviews start repeating.
  */
 object SessionBuilder {
 
@@ -18,24 +22,56 @@ object SessionBuilder {
         progress: Map<String, WordProgress>,
         lesson: Int,
         todayEpochDay: Long,
-        size: Int = DEFAULT_SESSION_SIZE
+        size: Int = DEFAULT_SESSION_SIZE,
+        includeEarlierLessons: Boolean = true
     ): List<Word> {
-        val lessonWords = words.filter { it.lesson == lesson }.sortedBy { it.order }
+        val currentLessonWords = words.filter { it.lesson == lesson }
 
-        val due = lessonWords
-            .mapNotNull { word ->
-                val state = progress[word.id] ?: return@mapNotNull null
-                if (!Leitner.isDue(state, todayEpochDay)) null else word to state
-            }
-            .sortedWith(compareBy({ it.second.dueEpochDay ?: Long.MIN_VALUE }, { it.first.order }))
-            .map { it.first }
+        val fresh = currentLessonWords
+            .filter { progress[it.id] == null }
+            .sortedBy { it.order }
 
-        val fresh = lessonWords.filter { progress[it.id] == null }
+        val dueCurrent = dueOf(currentLessonWords, progress, todayEpochDay)
 
-        return (due + fresh).take(size)
+        val dueEarlier = if (includeEarlierLessons) {
+            dueLeftovers(words, progress, lesson, todayEpochDay)
+        } else {
+            emptyList()
+        }
+
+        return (fresh + dueCurrent + dueEarlier).take(size)
     }
 
-    /** How many words of a lesson are waiting right now (due reviews + never-seen words). */
+    /** Due words from earlier lessons: the «مانده از قبل» section of the today screen. */
+    fun dueLeftovers(
+        words: List<Word>,
+        progress: Map<String, WordProgress>,
+        lesson: Int,
+        todayEpochDay: Long
+    ): List<Word> = dueOf(
+        words = words.filter { it.lesson < lesson },
+        progress = progress,
+        todayEpochDay = todayEpochDay
+    )
+
+    /** Words of [words] whose review day has arrived (new words are not included). */
+    fun dueOf(
+        words: List<Word>,
+        progress: Map<String, WordProgress>,
+        todayEpochDay: Long
+    ): List<Word> = words
+        .mapNotNull { word ->
+            val state = progress[word.id] ?: return@mapNotNull null
+            if (state.isNew || !Leitner.isDue(state, todayEpochDay)) {
+                null
+            } else {
+                word to state
+            }
+        }
+        .sortedWith(compareBy({ it.second.dueEpochDay ?: Long.MIN_VALUE }, { it.first.order }))
+        .map { it.first }
+
+    /** How many words are waiting right now (new + due, current lesson and leftovers). */
     fun pendingCount(
         words: List<Word>,
         progress: Map<String, WordProgress>,

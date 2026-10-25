@@ -109,7 +109,7 @@ class LeitnerEngineTest {
     }
 
     @Test
-    fun `due reviews come before new words`() {
+    fun `new words of the lesson come first, then due reviews`() {
         val words = (1..15).map { word("w$it", 1, it) }
         val progress = mapOf(
             "w12" to WordProgress("w12", box = 2, dueEpochDay = today - 3, lastReviewedEpochDay = today - 5, correctCount = 1),
@@ -119,11 +119,27 @@ class LeitnerEngineTest {
 
         val session = SessionBuilder.nextSession(words, progress, lesson = 1, todayEpochDay = today)
 
-        assertEquals("w12", session[0].id) // oldest due first
-        assertEquals("w14", session[1].id)
-        assertFalse(session.any { it.id == "w15" }) // not due yet
+        // the lesson still has new words (w1..w11, w13), so they take the lead
+        assertEquals("w1", session[0].id)
         assertEquals(10, session.size)
-        assertTrue(session.drop(2).all { it.id !in progress.keys })
+        assertFalse(session.any { it.id == "w15" }) // not due yet
+    }
+
+    @Test
+    fun `leftovers from earlier lessons come after the current lesson`() {
+        val words = listOf(
+            word("a1", 1, 0),
+            word("b1", 2, 0),
+            word("b2", 2, 1)
+        )
+        val progress = mapOf(
+            "a1" to WordProgress("a1", box = 1, dueEpochDay = today - 2, lastReviewedEpochDay = today - 3, correctCount = 0)
+        )
+
+        val session = SessionBuilder.nextSession(words, progress, lesson = 2, todayEpochDay = today)
+
+        assertEquals(listOf("b1", "b2", "a1"), session.map { it.id })
+        assertEquals(listOf("a1"), SessionBuilder.dueLeftovers(words, progress, 2, today).map { it.id })
     }
 
     @Test
@@ -157,12 +173,17 @@ class LeitnerEngineTest {
     }
 
     @Test
-    fun `next lesson opens after the previous one is fully answered correctly`() {
+    fun `next lesson opens after every word was read at least once`() {
         val words = listOf(word("a", 1, 1), word("b", 1, 2), word("c", 2, 1))
-        val partial = mapOf("a" to WordProgress("a", box = 2, correctCount = 1))
+        val partial = mapOf(
+            "a" to WordProgress("a", box = 2, dueEpochDay = today + 2, lastReviewedEpochDay = today, correctCount = 1)
+        )
         assertFalse(LessonPlan.isUnlocked(2, words, partial))
 
-        val complete = partial + ("b" to WordProgress("b", box = 2, correctCount = 1))
+        // 🔴 still counts as read: the word must not stay unread, but it need not be known
+        val complete = partial + (
+            "b" to WordProgress("b", box = 1, dueEpochDay = today + 1, lastReviewedEpochDay = today, wrongCount = 1)
+        )
         assertTrue(LessonPlan.isUnlocked(2, words, complete))
     }
 

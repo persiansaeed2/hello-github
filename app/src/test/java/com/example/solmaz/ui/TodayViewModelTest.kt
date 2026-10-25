@@ -137,7 +137,7 @@ class TodayViewModelTest {
     }
 
     @Test
-    fun `a due word is listed before new ones and shows its review number`() {
+    fun `a due word shows its review number and comes after the new words`() {
         store = FakeProgressStore(
             mapOf(
                 "c" to WordProgress("c", box = 1, dueEpochDay = today, lastReviewedEpochDay = today - 1, correctCount = 1)
@@ -146,10 +146,35 @@ class TodayViewModelTest {
         vm = TodayViewModel(words, store, todayEpochDay = today)
 
         val items = vm.items()
-        assertEquals("c", items.first().word.id)
-        assertEquals(WordStatus.DUE, items.first().status)
-        assertEquals(2, items.first().reviewNumber) // «مرور ۲»
+        // new words of the current lesson keep the lead
+        assertEquals(WordStatus.NEW, items.first().status)
+        val due = items.first { it.word.id == "c" }
+        assertEquals(WordStatus.DUE, due.status)
+        assertEquals(2, due.reviewNumber) // «مرور ۲»
         assertEquals(1, vm.count(WordStatus.DUE))
+    }
+
+    @Test
+    fun `leftovers from an earlier lesson are offered after the current lesson`() {
+        store = FakeProgressStore(
+            mapOf(
+                "a" to WordProgress("a", box = 1, dueEpochDay = today - 1, lastReviewedEpochDay = today - 2, wrongCount = 1),
+                "b" to WordProgress("b", box = 2, dueEpochDay = today - 1, lastReviewedEpochDay = today - 3, correctCount = 1),
+                // read and scheduled in the future: lesson 1 is fully read, nothing due
+                "c" to WordProgress("c", box = 3, dueEpochDay = today + 4, lastReviewedEpochDay = today - 1, correctCount = 2)
+            )
+        )
+        // lesson 1 is fully read, so lesson 2 is the current one
+        vm = TodayViewModel(words, store, todayEpochDay = today)
+
+        assertEquals(2, vm.lesson)
+        assertEquals(listOf("a", "b"), vm.leftovers().map { it.word.id })
+        assertEquals(2, vm.leftovers().size)
+        // current lesson (2 new) + 2 leftovers
+        assertEquals(4, vm.todayTotal)
+
+        vm.startSession()
+        assertEquals(listOf("d", "e", "a", "b"), vm.sessionQueue.map { it.id })
     }
 
     @Test

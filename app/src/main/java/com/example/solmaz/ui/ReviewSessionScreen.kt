@@ -17,6 +17,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Check
 import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.VolumeUp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -50,6 +51,7 @@ private val Green = Color(0xFF2FBF8F)
 fun ReviewSessionScreen(
     vm: TodayViewModel,
     onExit: () -> Unit,
+    onSpeak: (String) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val word = vm.currentWord
@@ -90,7 +92,13 @@ fun ReviewSessionScreen(
         if (word == null) {
             SessionSummary(vm)
         } else {
-            WordCard(word.term, word.meaning, vm.revealed, modifier = Modifier.weight(1f))
+            WordCard(
+                term = word.term,
+                meaning = word.meaning,
+                revealed = vm.revealed,
+                onSpeak = { onSpeak(word.term) },
+                modifier = Modifier.weight(1f)
+            )
             Spacer(Modifier.height(18.dp))
             if (vm.revealed) {
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -121,6 +129,7 @@ private fun WordCard(
     term: String,
     meaning: String,
     revealed: Boolean,
+    onSpeak: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     GlassCard(
@@ -140,6 +149,28 @@ private fun WordCard(
                 color = Ink,
                 textAlign = TextAlign.Center
             )
+            Spacer(Modifier.height(10.dp))
+            Row(
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .background(Color.White.copy(alpha = 0.85f))
+                    .clickable(onClick = onSpeak)
+                    .padding(horizontal = 14.dp, vertical = 8.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.VolumeUp,
+                    contentDescription = "تلفظ",
+                    tint = Pink500,
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(Modifier.size(6.dp))
+                Text(
+                    text = "تلفظ",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = Pink500
+                )
+            }
             Spacer(Modifier.height(18.dp))
             if (revealed) {
                 Text(

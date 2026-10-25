@@ -14,8 +14,8 @@ data class LessonOverview(
  * Lessons are studied one after another, the way the book introduces them.
  *
  * Lesson 1 is always open; lesson N opens only after **every** word of lesson N-1 has
- * been answered correctly at least once — so the last lesson can never be pushed in
- * front of the user during the first week.
+ * been read at least once (answered 🟢 or 🔴) — so no word stays unread and the last
+ * lesson can never be pushed in front of the user during the first week.
  */
 object LessonPlan {
 
@@ -30,7 +30,7 @@ object LessonPlan {
         if (lesson <= 1) return true
         val previous = words.filter { it.lesson == lesson - 1 }
         if (previous.isEmpty()) return true
-        return previous.all { (progress[it.id]?.correctCount ?: 0) > 0 }
+        return previous.all { word -> progress[word.id]?.isNew == false }
     }
 
     fun overview(
@@ -50,13 +50,20 @@ object LessonPlan {
         )
     }
 
-    /** The lesson the user should continue with: first unlocked lesson that still has work. */
+    /**
+     * The lesson the user is on: the first open lesson that still has **unread** words,
+     * because new words have priority. Once every lesson has been read at least once,
+     * the first open lesson with due reviews wins. Reviews of earlier lessons are
+     * offered as «مانده از قبل» and never block the lesson itself.
+     */
     fun currentLesson(
         words: List<Word>,
         progress: Map<String, WordProgress>,
         todayEpochDay: Long
-    ): Int? = overview(words, progress, todayEpochDay)
-        .firstOrNull { it.unlocked && it.dueWords > 0 }
-        ?.lesson
-        ?: overview(words, progress, todayEpochDay).firstOrNull { it.unlocked }?.lesson
+    ): Int? {
+        val overview = overview(words, progress, todayEpochDay)
+        return overview.firstOrNull { it.unlocked && it.newWords > 0 }?.lesson
+            ?: overview.firstOrNull { it.unlocked && it.dueWords > 0 }?.lesson
+            ?: overview.lastOrNull { it.unlocked }?.lesson
+    }
 }

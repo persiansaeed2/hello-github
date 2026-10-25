@@ -18,6 +18,8 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.MenuBook
+import androidx.compose.material.icons.rounded.VolumeUp
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -60,9 +62,11 @@ fun TodayScreen(
     vm: TodayViewModel,
     onStart: () -> Unit,
     loadError: String? = null,
+    onSpeak: (String) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val items = vm.items()
+    val leftovers = vm.leftovers()
 
     Box(modifier = modifier) {
         LazyColumn(
@@ -73,10 +77,22 @@ fun TodayScreen(
             item { TodayCard(vm) }
             item { Legend() }
 
-            if (items.isEmpty()) {
+            if (items.isEmpty() && leftovers.isEmpty()) {
                 item { EmptyWords(loadError) }
             } else {
-                items(items, key = { it.word.id }) { item -> WordRow(item) }
+                vm.lesson?.let { lesson ->
+                    item { SectionTitle("درس ${lesson.fa}") }
+                }
+                items(items, key = { it.word.id }) { item ->
+                    WordRow(item = item, onSpeak = onSpeak)
+                }
+
+                if (leftovers.isNotEmpty()) {
+                    item { SectionTitle("مانده از قبل — اگر وقت و حوصله داری", spaced = true) }
+                    items(leftovers, key = { "left-${it.word.id}" }) { item ->
+                        WordRow(item = item, onSpeak = onSpeak)
+                    }
+                }
             }
         }
 
@@ -145,6 +161,16 @@ private fun TodayCard(vm: TodayViewModel) {
 }
 
 @Composable
+private fun SectionTitle(text: String, spaced: Boolean = false) {
+    Text(
+        text = text,
+        style = MaterialTheme.typography.labelMedium,
+        color = InkSoft,
+        modifier = Modifier.padding(top = if (spaced) 10.dp else 2.dp, bottom = 2.dp)
+    )
+}
+
+@Composable
 private fun Legend() {
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -172,7 +198,7 @@ private fun LegendDot(status: WordStatus, label: String) {
 }
 
 @Composable
-private fun WordRow(item: WordItem) {
+private fun WordRow(item: WordItem, onSpeak: (String) -> Unit) {
     GlassCard(
         modifier = Modifier.fillMaxWidth(),
         corner = 20.dp,
@@ -201,6 +227,22 @@ private fun WordRow(item: WordItem) {
                     color = InkSoft
                 )
             }
+            Box(
+                modifier = Modifier
+                    .size(34.dp)
+                    .clip(CircleShape)
+                    .background(Color.White.copy(alpha = 0.75f))
+                    .clickable { onSpeak(item.word.term) },
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.VolumeUp,
+                    contentDescription = "تلفظ ${item.word.term}",
+                    tint = Pink500,
+                    modifier = Modifier.size(16.dp)
+                )
+            }
+            Spacer(Modifier.width(8.dp))
             Chip(
                 text = statusLabel(item),
                 container = when (item.status) {

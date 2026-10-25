@@ -28,7 +28,7 @@ class MainActivityTest {
         // Jalali date of today, e.g. «یکشنبه ۳ آبان ۱۴۰۵»
         rule.onAllNodesWithText("امروز", substring = true)[0].assertIsDisplayed()
         rule.onNodeWithText("برای امروز").assertIsDisplayed()
-        rule.onNodeWithText("apple").assertIsDisplayed()
+        rule.onNodeWithText("der Apfel").assertIsDisplayed()
         rule.onNodeWithText("سیب").assertIsDisplayed()
         rule.onAllNodesWithText("تازه")[0].assertIsDisplayed()
     }
@@ -37,14 +37,14 @@ class MainActivityTest {
     fun `review flow reveals the meaning and accepts a green answer`() {
         rule.onNodeWithText("شروع مرور ۶ لغت").performClick()
 
-        rule.onNodeWithText("apple").assertIsDisplayed()
+        rule.onNodeWithText("der Apfel").assertIsDisplayed()
         rule.onNodeWithText("نمایش معنی").performClick()
         rule.onNodeWithText("سیب").assertIsDisplayed()
 
         rule.onNodeWithText("بلدم").performClick()
 
         // the next card is shown, so «apple» is gone from the card
-        rule.onNodeWithText("book").assertIsDisplayed()
+        rule.onNodeWithText("das Buch").assertIsDisplayed()
     }
 
     @Test

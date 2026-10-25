@@ -87,15 +87,26 @@ class TodayViewModel(
         )
     }
 
+    /** New words first: the lesson the user is on always has priority. */
     private fun statusOrder(status: WordStatus): Int = when (status) {
-        WordStatus.DUE -> 0
-        WordStatus.NEW -> 1
+        WordStatus.NEW -> 0
+        WordStatus.DUE -> 1
         WordStatus.LATER -> 2
     }
 
     fun count(status: WordStatus): Int = items().count { it.status == status }
 
-    val todayTotal: Int get() = count(WordStatus.DUE) + count(WordStatus.NEW)
+    /**
+     * Due words from lessons the user already started — the «مانده از قبل» section.
+     * They are offered after the current lesson, so nothing is left half-read.
+     */
+    fun leftovers(): List<WordItem> {
+        val currentLesson = lesson ?: return emptyList()
+        return SessionBuilder.dueLeftovers(words, progress, currentLesson, todayEpochDay)
+            .map { word -> item(word, progress[word.id]) }
+    }
+
+    val todayTotal: Int get() = count(WordStatus.NEW) + count(WordStatus.DUE) + leftovers().size
 
     // --------------------------------------------------------------- session
 
