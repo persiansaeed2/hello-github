@@ -28,6 +28,8 @@ enum class WordStatus {
     LATER
 }
 
+data class LessonBar(val lesson: Int, val read: Float, val strong: Float)
+
 data class WordItem(
     val word: Word,
     val status: WordStatus,
@@ -123,6 +125,36 @@ class TodayViewModel(
         get() = lesson?.let { number ->
             SessionBuilder.nextSession(words, progress, number, todayEpochDay).size
         } ?: 0
+
+    // ------------------------------------------------------ boxes and chart
+
+    /** Words per Leitner box 1..8 (only words that have been read at least once). */
+    fun boxCounts(): List<Int> =
+        (Leitner.FIRST_BOX..Leitner.MAX_BOX).map { box ->
+            progress.values.count { !it.isNew && it.box == box }
+        }
+
+    /** Words never read, across the whole book. */
+    fun unseenCount(): Int = words.count { progress[it.id]?.isNew != false }
+
+    /** Unread words in lessons before the current one (normally 0: lessons open in order). */
+    fun unreadBefore(): Int {
+        val current = lesson ?: return 0
+        return words.count { it.lesson < current && progress[it.id]?.isNew != false }
+    }
+
+    /** One bar per lesson: share of words read, and share that reached box 4 or higher. */
+    fun lessonBars(): List<LessonBar> = LessonPlan.lessonNumbers(words).map { number ->
+        val inLesson = words.filter { it.lesson == number }
+        val total = inLesson.size.coerceAtLeast(1)
+        LessonBar(
+            lesson = number,
+            read = inLesson.count { progress[it.id]?.isNew == false }.toFloat() / total,
+            strong = inLesson.count { (progress[it.id]?.box ?: 0) >= 4 }.toFloat() / total
+        )
+    }
+
+    val totalWords: Int get() = words.size
 
     // --------------------------------------------------------------- session
 

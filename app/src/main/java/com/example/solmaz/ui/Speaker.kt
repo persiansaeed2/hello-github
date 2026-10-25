@@ -37,6 +37,10 @@ class AndroidSpeaker(
         var pending: String? = null
     )
 
+    /** 1.0 = normal; lower is calmer. Changed from the settings dialog. */
+    @Volatile
+    var speechRate: Float = 0.7f
+
     private val main = Handler(Looper.getMainLooper())
     private val german = Engine()
     private val persian = Engine()
@@ -78,7 +82,6 @@ class AndroidSpeaker(
                 engine.failed = !ok
                 if (ok) {
                     runCatching { engine.tts?.language = locale }
-                    if (lang == SpeechLang.GERMAN) runCatching { engine.tts?.setSpeechRate(0.9f) }
                     engine.pending?.let { say(engine, lang, it) }
                 } else {
                     notifyUnavailable(lang)
@@ -97,6 +100,7 @@ class AndroidSpeaker(
         val spoken = if (lang == SpeechLang.GERMAN) SpeechText.german(text) else text
         if (spoken.isBlank()) return
         runCatching {
+            engine.tts?.setSpeechRate(speechRate)
             engine.tts?.speak(spoken, TextToSpeech.QUEUE_FLUSH, null, "solmaz-$lang")
         }
     }

@@ -1,6 +1,20 @@
 package com.example.solmaz.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.rounded.Menu
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import com.example.solmaz.study.Leitner
+import com.example.solmaz.ui.theme.Pink300
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -64,18 +78,30 @@ fun TodayScreen(
     userName: String? = null,
     loadError: String? = null,
     onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
+    speechRate: Float = 0.7f,
+    onSpeechRate: (Float) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val items = vm.items()
     val leftovers = vm.leftovers()
+    var showAll by remember { mutableStateOf(false) }
+    var showSettings by remember { mutableStateOf(false) }
+    if (showSettings) {
+        SettingsDialog(rate = speechRate, onRate = onSpeechRate, onClose = { showSettings = false })
+    }
 
     Box(modifier = modifier) {
         LazyColumn(
             contentPadding = PaddingValues(start = 20.dp, end = 20.dp, top = 18.dp, bottom = 120.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            item { Header(vm, userName) }
+            item { Header(vm, userName, onMenu = { showSettings = true }) }
             item { TodayCard(vm) }
+            item { SectionTitle("جعبه‌های لایتنر") }
+            item { LeitnerBoxes(vm) }
+            item { SectionTitle("نمودار پیشرفت") }
+            item { ProgressChart(vm) }
+            item { PreviousLessonsCard(vm) }
             item { Legend() }
 
             if (items.isEmpty() && leftovers.isEmpty()) {
@@ -85,13 +111,16 @@ fun TodayScreen(
                     val title = vm.lessonTitle?.let { " — $it" }.orEmpty()
                     item { SectionTitle("درس ${lesson.fa}$title") }
                 }
-                items(items, key = { it.word.id }) { item ->
+                items(if (showAll) items else items.take(PREVIEW), key = { it.word.id }) { item ->
                     WordRow(item = item, onSpeak = { term -> onSpeak(term, SpeechLang.GERMAN) })
+                }
+                if (items.size > PREVIEW) {
+                    item { ShowMore(showAll, items.size) { showAll = !showAll } }
                 }
 
                 if (leftovers.isNotEmpty()) {
                     item { SectionTitle("مانده از قبل — اگر وقت و حوصله داری", spaced = true) }
-                    items(leftovers, key = { "left-${it.word.id}" }) { item ->
+                    items(leftovers.take(PREVIEW), key = { "left-${it.word.id}" }) { item ->
                         WordRow(item = item, onSpeak = { term -> onSpeak(term, SpeechLang.GERMAN) })
                     }
                 }
@@ -112,7 +141,7 @@ fun TodayScreen(
 }
 
 @Composable
-private fun Header(vm: TodayViewModel, userName: String?) {
+private fun Header(vm: TodayViewModel, userName: String?, onMenu: () -> Unit) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         Column(modifier = Modifier.weight(1f)) {
             Text(
@@ -127,7 +156,9 @@ private fun Header(vm: TodayViewModel, userName: String?) {
                 color = InkSoft
             )
         }
-        IconBadge(icon = Icons.Rounded.MenuBook, badgeSize = 48.dp)
+        Box(modifier = Modifier.clip(CircleShape).clickable(onClick = onMenu)) {
+            IconBadge(icon = Icons.Rounded.Menu, badgeSize = 48.dp)
+        }
     }
 }
 
@@ -161,6 +192,9 @@ private fun TodayCard(vm: TodayViewModel) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             Chip(text = "${due.fa} نوبت مرور", container = Pink100, contentColor = Pink500)
             Chip(text = "${fresh.fa} تازه", container = Color(0xFFDDF8F1), contentColor = Color(0xFF0B5B4B))
+            vm.leftovers().size.takeIf { it > 0 }?.let {
+                Chip(text = "${it.fa} مانده از قبل", container = Color.White, contentColor = Pink500)
+            }
             vm.lesson?.let { lesson ->
                 Chip(
                     text = buildString {
@@ -311,4 +345,145 @@ private fun StartBar(words: Int, onStart: () -> Unit, modifier: Modifier = Modif
             fontWeight = FontWeight.Bold
         )
     }
+}
+
+private const val PREVIEW = 5
+
+@Composable
+private fun ShowMore(expanded: Boolean, total: Int, onToggle: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .clip(CircleShape)
+            .background(Pink100)
+            .clickable(onClick = onToggle)
+            .padding(vertical = 12.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = if (expanded) "نمایش کمتر" else "نمایش همهٔ ${total.fa} لغت",
+            color = Pink500,
+            style = MaterialTheme.typography.labelLarge
+        )
+    }
+}
+
+/** The eight Leitner boxes: how many words sit in each, and its review interval in days. */
+@Composable
+private fun LeitnerBoxes(vm: TodayViewModel) {
+    val counts = vm.boxCounts()
+    val top = (counts.maxOrNull() ?: 0).coerceAtLeast(1)
+    GlassCard(modifier = Modifier.fillMaxWidth(), contentPadding = PaddingValues(16.dp)) {
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
+            verticalAlignment = Alignment.Bottom
+        ) {
+            counts.forEachIndexed { index, count ->
+                Column(modifier = Modifier.weight(1f), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Text(count.fa, style = MaterialTheme.typography.labelMedium, color = Ink, fontWeight = FontWeight.Bold)
+                    Spacer(Modifier.height(4.dp))
+                    Box(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height((8 + 56 * count / top).dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(if (count == 0) Pink100 else Pink400())
+                    )
+                    Spacer(Modifier.height(6.dp))
+                    Text((index + 1).fa, style = MaterialTheme.typography.labelMedium, color = Ink, fontWeight = FontWeight.Bold)
+                    Text(Leitner.intervalDays(index + 1).fa, style = MaterialTheme.typography.labelSmall, color = InkSoft)
+                }
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(
+            text = "شمارهٔ جعبه بالا، فاصلهٔ مرور (روز) پایین • ${vm.unseenCount().fa} لغت هنوز نخوانده",
+            style = MaterialTheme.typography.labelSmall,
+            color = InkSoft
+        )
+    }
+}
+
+private fun Pink400() = Pink300
+
+/** One bar per lesson (lesson 1 on the right): light = read, dark = learned (box 4 and up). */
+@Composable
+private fun ProgressChart(vm: TodayViewModel) {
+    val bars = vm.lessonBars()
+    val read = vm.totalWords - vm.unseenCount()
+    GlassCard(modifier = Modifier.fillMaxWidth(), contentPadding = PaddingValues(16.dp)) {
+        Canvas(modifier = Modifier.fillMaxWidth().height(96.dp)) {
+            if (bars.isEmpty()) return@Canvas
+            val gap = 4.dp.toPx()
+            val barWidth = (size.width - gap * (bars.size - 1)) / bars.size
+            val radius = CornerRadius(barWidth / 3f, barWidth / 3f)
+            bars.forEachIndexed { i, bar ->
+                val x = size.width - (i + 1) * barWidth - i * gap
+                drawRoundRect(Pink100, Offset(x, 0f), Size(barWidth, size.height), radius)
+                val readHeight = size.height * bar.read
+                drawRoundRect(Pink300, Offset(x, size.height - readHeight), Size(barWidth, readHeight), radius)
+                val strongHeight = size.height * bar.strong
+                drawRoundRect(Pink500, Offset(x, size.height - strongHeight), Size(barWidth, strongHeight), radius)
+            }
+        }
+        Spacer(Modifier.height(8.dp))
+        Text(
+            text = "${read.fa} از ${vm.totalWords.fa} لغت خوانده شده • هر ستون یک درس",
+            style = MaterialTheme.typography.labelSmall,
+            color = InkSoft
+        )
+    }
+}
+
+/** Unread and overdue words of lessons before the current one. */
+@Composable
+private fun PreviousLessonsCard(vm: TodayViewModel) {
+    val unread = vm.unreadBefore()
+    val due = vm.leftovers().size
+    GlassCard(modifier = Modifier.fillMaxWidth(), contentPadding = PaddingValues(16.dp)) {
+        Text("مانده از درس‌های قبل", style = MaterialTheme.typography.titleMedium, color = Ink)
+        Spacer(Modifier.height(4.dp))
+        Text(
+            text = if (unread == 0 && due == 0) {
+                "همهٔ لغات درس‌های قبل خوانده شده و مروری عقب نیفتاده ✓"
+            } else {
+                "${unread.fa} لغت نخوانده • ${due.fa} لغت نوبت مرور"
+            },
+            style = MaterialTheme.typography.bodyMedium,
+            color = InkSoft
+        )
+        Spacer(Modifier.height(4.dp))
+        Text(
+            text = "درس بعدی وقتی باز می‌شود که همهٔ لغات درس قبل حداقل یک‌بار خوانده شود.",
+            style = MaterialTheme.typography.labelSmall,
+            color = InkSoft
+        )
+    }
+}
+
+@Composable
+private fun SettingsDialog(rate: Float, onRate: (Float) -> Unit, onClose: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onClose,
+        confirmButton = { TextButton(onClick = onClose) { Text("بستن") } },
+        title = { Text("تنظیمات") },
+        text = {
+            Column {
+                Text("سرعت تلفظ", style = MaterialTheme.typography.bodyMedium, color = InkSoft)
+                Spacer(Modifier.height(8.dp))
+                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf("آرام" to 0.5f, "متوسط" to 0.7f, "عادی" to 0.9f).forEach { (label, value) ->
+                        val on = kotlin.math.abs(rate - value) < 0.05f
+                        Chip(
+                            text = label,
+                            modifier = Modifier.clickable { onRate(value) },
+                            container = if (on) Pink500 else Pink100,
+                            contentColor = if (on) Color.White else Pink500
+                        )
+                    }
+                }
+            }
+        }
+    )
 }

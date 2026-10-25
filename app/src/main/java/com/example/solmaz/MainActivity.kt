@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -62,6 +63,8 @@ class MainActivity : ComponentActivity() {
                 }
                 val profile = remember { ProfileStore(context.applicationContext) }
                 var userName by remember { mutableStateOf(profile.name) }
+                var speechRate by remember { mutableStateOf(profile.speechRate) }
+                LaunchedEffect(speechRate) { speaker.speechRate = speechRate }
                 DisposableEffect(speaker) {
                     onDispose { speaker.shutdown() }
                 }
@@ -87,7 +90,12 @@ class MainActivity : ComponentActivity() {
                         viewModel = viewModel,
                         userName = userName,
                         loadError = load.error,
-                        onSpeak = speaker::speak
+                        onSpeak = speaker::speak,
+                        speechRate = speechRate,
+                        onSpeechRate = {
+                            speechRate = it
+                            profile.speechRate = it
+                        }
                     )
                 }
             }
@@ -105,7 +113,9 @@ fun SolmazApp(
     viewModel: TodayViewModel,
     userName: String? = null,
     loadError: String? = null,
-    onSpeak: (String, SpeechLang) -> Unit = { _, _ -> }
+    onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
+    speechRate: Float = 0.7f,
+    onSpeechRate: (Float) -> Unit = {}
 ) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -129,7 +139,9 @@ fun SolmazApp(
                         onStart = { viewModel.startSession() },
                         userName = userName,
                         loadError = loadError,
-                        onSpeak = onSpeak
+                        onSpeak = onSpeak,
+                        speechRate = speechRate,
+                        onSpeechRate = onSpeechRate
                     )
                 }
             }

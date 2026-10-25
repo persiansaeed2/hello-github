@@ -20,7 +20,15 @@ class ProfileStore(context: Context) {
             }.apply()
         }
 
+    /** Speech speed of the pronunciation; calmer than the Android default (1.0). */
+    var speechRate: Float
+        get() = prefs.getFloat(KEY_RATE, 0.7f).coerceIn(0.3f, 1.2f)
+        set(value) {
+            prefs.edit().putFloat(KEY_RATE, value).apply()
+        }
+
     private companion object {
+        const val KEY_RATE = "speech_rate"
         const val PREFS_NAME = "solmaz_profile"
         const val KEY_NAME = "name"
     }
