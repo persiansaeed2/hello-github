@@ -27,6 +27,12 @@
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
+APK آمادهٔ نصب (دیباگ) در [`dist/motalee-debug.apk`](dist/motalee-debug.apk) هم موجود است:
+
+```bash
+adb install -r dist/motalee-debug.apk
+```
+
 یا پروژه را با **Android Studio** باز کنید (File ▸ Open) و Run بزنید.
 
 ## ساختار پروژه

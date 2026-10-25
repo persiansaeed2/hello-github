@@ -13,6 +13,7 @@ local.properties
 
 # Build output
 *.apk
+!dist/*.apk
 *.aab
 *.keystore
 !debug.keystore
