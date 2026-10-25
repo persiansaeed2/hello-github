@@ -79,6 +79,7 @@ app/src/test/java/com/example/motalee/model/JalaliDateTest.kt
 > `IllegalArgumentException: Padding must be non-negative` کرش می‌کرد.
 > با `Modifier.offset` جایگزین شد و تست رگرسیون دارد.
 
+## نکات فنی
 
 * `minSdk = 26` تا از `java.time` بدون desugaring استفاده شود؛ `compileSdk/targetSdk = 34`
 * Compose BOM `2024.06.00`، Kotlin `1.9.24`، AGP `8.5.2`، Gradle `8.7`
