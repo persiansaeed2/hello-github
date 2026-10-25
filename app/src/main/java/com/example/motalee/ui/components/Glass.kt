@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -72,7 +73,8 @@ private fun BoxScope.Glow(
     Box(
         modifier = Modifier
             .align(Alignment.TopStart)
-            .padding(start = offsetX, top = offsetY)
+            // offset (not padding) because the glows intentionally hang off the screen edge.
+            .offset(x = offsetX, y = offsetY)
             .size(glowSize)
             .background(
                 Brush.radialGradient(listOf(color.copy(alpha = 0.55f), Color.Transparent)),

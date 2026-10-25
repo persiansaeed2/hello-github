@@ -62,7 +62,23 @@ app/src/test/java/com/example/motalee/model/JalaliDateTest.kt
 * رفت‌وبرگشت **هر روزِ** یک بازهٔ ۲۰ ساله
 * طول ماه‌ها، سال کبیسه (۱۴۰۳ کبیسه، ۱۴۰۴ نه)، شنبه‌اول بودن هفته و ارقام فارسی
 
-## نکات فنی
+## تست‌ها (۲۳ تست، بدون نیاز به امولاتور)
+
+```bash
+./gradlew :app:testDebugUnitTest
+```
+
+| فایل | تعداد | چه چیزی را تضمین می‌کند |
+|---|---|---|
+| `JalaliDateTest` | ۷ | تبدیل دوطرفهٔ تاریخ شمسی/میلادی، ۷۳۰۵ روز رفت‌وبرگشت، کبیسه‌ها، شنبه‌اول، ارقام فارسی |
+| `StudyViewModelTest` | ۱۳ | افزودن/حذف جلسه، ذخیره‌سازی، آمار هفته، streak، بهترین روز، ناوبری ماه‌ها |
+| `MainActivityTest` | ۳ | بالا آمدن واقعی Activity با **Robolectric**، رندر سه تب، و فلو کامل «افزودن جلسه → دیده‌شدن در امروز/تقویم/آمار» |
+
+> همین تست‌ها یک کرش واقعی را پیدا کردند: `AppBackground` برای هاله‌های پس‌زمینه از
+> `padding` با مقدار منفی استفاده می‌کرد و اپ **در لحظهٔ باز شدن** با
+> `IllegalArgumentException: Padding must be non-negative` کرش می‌کرد.
+> با `Modifier.offset` جایگزین شد و تست رگرسیون دارد.
+
 
 * `minSdk = 26` تا از `java.time` بدون desugaring استفاده شود؛ `compileSdk/targetSdk = 34`
 * Compose BOM `2024.06.00`، Kotlin `1.9.24`، AGP `8.5.2`، Gradle `8.7`

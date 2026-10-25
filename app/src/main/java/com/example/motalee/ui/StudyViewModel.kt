@@ -7,7 +7,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.motalee.data.StudyRepository
+import com.example.motalee.data.StudyStore
 import com.example.motalee.model.JalaliCalendar
 import com.example.motalee.model.JalaliDate
 import com.example.motalee.model.StudySession
@@ -22,7 +22,7 @@ data class SubjectStat(val subject: String, val minutes: Int)
  * Single source of truth for the UI: the list of sessions plus the currently
  * selected day / visible month of the Jalali calendar.
  */
-class StudyViewModel(private val repository: StudyRepository) : ViewModel() {
+class StudyViewModel(private val repository: StudyStore) : ViewModel() {
 
     var sessions by mutableStateOf(repository.load().sortedByDescending { it.id })
         private set
@@ -146,7 +146,7 @@ class StudyViewModel(private val repository: StudyRepository) : ViewModel() {
 
 /** Manual factory: the screen owns the repository, no DI framework needed yet. */
 class StudyViewModelFactory(
-    private val repository: StudyRepository
+    private val repository: StudyStore
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")

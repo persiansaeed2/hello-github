@@ -12,17 +12,17 @@ import org.json.JSONObject
  * single JSON document is simpler and faster than a database, and it keeps the
  * APK free of extra dependencies.
  */
-class StudyRepository(context: Context) {
+class StudyRepository(context: Context) : StudyStore {
 
     private val prefs = context.applicationContext
         .getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
 
-    fun load(): List<StudySession> {
+    override fun load(): List<StudySession> {
         val raw = prefs.getString(KEY_SESSIONS, null) ?: return emptyList()
         return runCatching { parse(raw) }.getOrDefault(emptyList())
     }
 
-    fun save(sessions: List<StudySession>) {
+    override fun save(sessions: List<StudySession>) {
         val array = JSONArray()
         sessions.forEach { session ->
             array.put(

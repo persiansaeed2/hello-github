@@ -48,6 +48,13 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+    // Needed by Robolectric so the JVM tests can read res/ (fonts, strings, drawables).
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -66,4 +73,13 @@ dependencies {
 
     // Pure-Kotlin calendar logic is covered by JVM unit tests (no emulator needed).
     testImplementation("junit:junit:4.13.2")
+
+    // Robolectric runs the real Activity/Compose tree on the JVM: this is how the app
+    // itself is smoke-tested without an emulator.
+    testImplementation("org.robolectric:robolectric:4.12.2")
+    testImplementation("androidx.test:core-ktx:1.5.0")
+    testImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation(platform("androidx.compose:compose-bom:2024.06.00"))
+    testImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
