@@ -957,7 +957,7 @@
     {
       "id": "b109",
       "word": "exmatrikuliert werden",
-      "meaning": "از دانشگاه حذف/اخراج شدن",
+      "meaning": "از فهرست دانشجویان دانشگاه خارج شدن؛ ثبت‌نام دانشجویی پایان یافتن (نه لزوماً اخراج شدن)",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1125,7 +1125,7 @@
     {
       "id": "b132",
       "word": "habilitiert werden / sein",
-      "meaning": "هابیلیتاسیون شدن / بودن",
+      "meaning": "صلاحیت علمیِ هابیلیتاسیون را دریافت کردن / داشتن؛ مرحله‌ای پس از دکتری در نظام دانشگاهی آلمان",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1200,7 +1200,7 @@
     {
       "id": "b145",
       "word": "eine Vorlesung halten",
-      "meaning": "درس دادن (سخنرانی کلاسی)",
+      "meaning": "در دانشگاه درس نظری ارائه دادن؛ سخنرانی درسی کردن",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1209,7 +1209,7 @@
     {
       "id": "b146",
       "word": "eine Vorlesung hören",
-      "meaning": "در کلاس درس شرکت کردن",
+      "meaning": "در جلسهٔ درس نظری دانشگاه شرکت کردن",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1296,7 +1296,7 @@
     {
       "id": "b155",
       "word": "eine Studienleistung erbringen",
-      "meaning": "فعالیت درسی/امتیاز تحصیلی ارائه دادن",
+      "meaning": "تکلیف یا فعالیت آموزشی لازم را با موفقیت انجام دادن",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1700,7 +1700,7 @@
     {
       "id": "b217",
       "word": "entwickeln",
-      "meaning": "توسعه دادن، ساختن",
+      "meaning": "توسعه دادن؛ پرورش دادن؛ ابداع یا ایجاد کردن (بسته به بافت)",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "verb",
@@ -1775,7 +1775,7 @@
     {
       "id": "b232",
       "word": "eine These untermauern",
-      "meaning": "ادعا/تزی را مستدل کردن",
+      "meaning": "برای یک ادعا یا تز، شواهد و استدلال ارائه کردن",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "phrase",
@@ -1803,7 +1803,7 @@
     {
       "id": "b235",
       "word": "eine Theorie vertreten",
-      "meaning": "از نظریه‌ای دفاع کردن",
+      "meaning": "از یک نظریه دفاع کردن؛ به آن باور داشتن و از آن پشتیبانی کردن",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "phrase",
@@ -2320,7 +2320,7 @@
     {
       "id": "b295",
       "word": "etw. züchten",
-      "meaning": "چیزی را پرورش دادن",
+      "meaning": "پرورش دادن؛ اصلاح نژاد کردن",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "phrase",
@@ -2440,7 +2440,7 @@
     {
       "id": "b322",
       "word": "fasten",
-      "meaning": "روزه گرفتن، پرهیز غذایی کردن",
+      "meaning": "روزه گرفتن؛ برای مدتی از خوردن بعضی یا همهٔ غذاها پرهیز کردن",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "verb",
@@ -2661,7 +2661,7 @@
     {
       "id": "b357",
       "word": "etw. steuern",
-      "meaning": "چیزی را کنترل/هدایت کردن",
+      "meaning": "هدایت یا کنترل کردن؛ همچنین پرداخت مالیات (بسته به بافت)",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -2679,7 +2679,7 @@
     {
       "id": "b359",
       "word": "etw. weiterleiten",
-      "meaning": "چیزی را منتقل/ارسال کردن",
+      "meaning": "به مقصد یا شخص دیگری ارسال/ارجاع کردن",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -3007,7 +3007,7 @@
     {
       "id": "b395",
       "word": "etw. ausschütten",
-      "meaning": "چیزی را ترشح کردن",
+      "meaning": "محتویات چیزی را بیرون ریختن؛ همچنین پرداخت/توزیع کردن (مثلاً سود)",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -3035,7 +3035,7 @@
     {
       "id": "b398",
       "word": "etw. / jdn. abwehren",
-      "meaning": "چیزی/کسی را دفع کردن، در برابرش دفاع کردن",
+      "meaning": "حمله یا تهدید را دفع کردن؛ در برابر کسی/چیزی مقاومت کردن",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -3081,7 +3081,7 @@
     {
       "id": "b403",
       "word": "etw. / jdn. befruchten",
-      "meaning": "بارور کردن",
+      "meaning": "بارور کردن؛ لقاح را ممکن کردن",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "phrase",
@@ -3211,7 +3211,7 @@
     {
       "id": "b420",
       "word": "jdm. ist schwindlig",
-      "meaning": "سرگیجه داشتن",
+      "meaning": "کسی سرگیجه دارد",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3230,7 +3230,7 @@
     {
       "id": "b422",
       "word": "jdm. ist übel",
-      "meaning": "حالت تهوع داشتن",
+      "meaning": "کسی حالت تهوع دارد",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3483,7 +3483,7 @@
     {
       "id": "b453",
       "word": "etw. / jdn. verbinden",
-      "meaning": "پانسمان/باند پیچی کردن",
+      "meaning": "کسی/چیزی را وصل یا مرتبط کردن؛ برای زخم: پانسمان کردن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3529,7 +3529,7 @@
     {
       "id": "b459",
       "word": "etw. / jdn. röntgen",
-      "meaning": "رادیوگرافی کردن",
+      "meaning": "از کسی/چیزی عکس رادیولوژی گرفتن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3567,7 +3567,7 @@
     {
       "id": "b463",
       "word": "etw. / jdn. behandeln",
-      "meaning": "درمان کردن",
+      "meaning": "با کسی/چیزی برخورد کردن یا رسیدگی کردن؛ برای بیمار: درمان کردن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3576,7 +3576,7 @@
     {
       "id": "b464",
       "word": "etw. / jdn. heilen",
-      "meaning": "شفا دادن، درمان کردن",
+      "meaning": "درمان کردن؛ بهبود بخشیدن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3662,7 +3662,7 @@
     {
       "id": "b475",
       "word": "etw. / jdn. betäuben",
-      "meaning": "بی‌حس کردن",
+      "meaning": "بی‌حس کردن؛ همچنین گیج یا موقتاً از هوشیاری خارج کردن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3708,7 +3708,7 @@
     {
       "id": "b481",
       "word": "homöopathisch",
-      "meaning": "هومیوپاتی",
+      "meaning": "مربوط به هومیوپاتی؛ روشی جایگزین که اثربخشی آن برای بسیاری از کاربردها پشتوانهٔ علمی معتبری ندارد",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "adj/adv",
@@ -4095,7 +4095,7 @@
     {
       "id": "b533",
       "word": "gewinnen",
-      "meaning": "بردن",
+      "meaning": "برنده شدن؛ به دست آوردن یا استخراج کردن (بسته به بافت)",
       "lesson": 7,
       "unit": "2.4 Sport",
       "pos": "verb",
@@ -4140,7 +4140,7 @@
     {
       "id": "b548",
       "word": "etw. wahrnehmen",
-      "meaning": "چیزی را درک کردن، حس کردن",
+      "meaning": "درک یا احساس کردن؛ همچنین از فرصت یا حق استفاده کردن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4255,7 +4255,7 @@
     {
       "id": "b560",
       "word": "jdn. / etw. berühren",
-      "meaning": "لمس کردن",
+      "meaning": "کسی/چیزی را لمس کردن؛ از نظر عاطفی تحت تأثیر قرار دادن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4264,7 +4264,7 @@
     {
       "id": "b561",
       "word": "etw. spüren",
-      "meaning": "حس کردن",
+      "meaning": "حس کردن؛ متوجه وجود یا اثر چیزی شدن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4273,7 +4273,7 @@
     {
       "id": "b562",
       "word": "etw. empfinden",
-      "meaning": "احساس کردن",
+      "meaning": "احساس یا درک کردن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4430,7 +4430,7 @@
     {
       "id": "b580",
       "word": "jdn. / etw. lähmen",
-      "meaning": "فلج کردن",
+      "meaning": "کسی/چیزی را فلج یا از حرکت بازداشتن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4475,7 +4475,7 @@
     {
       "id": "b585",
       "word": "euphorisch",
-      "meaning": "سرخوش",
+      "meaning": "بسیار سرخوش و هیجان‌زده؛ در حالت سرخوشی شدید",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "adj/adv",
@@ -4538,7 +4538,7 @@
     {
       "id": "b592",
       "word": "etw. verdrängen",
-      "meaning": "چیزی را سرکوب کردن",
+      "meaning": "از ذهن بیرون راندن یا سرکوب کردن؛ همچنین جای چیزی را گرفتن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4583,7 +4583,7 @@
     {
       "id": "b597",
       "word": "jdn. / etw. prägen",
-      "meaning": "شکل دادن، تأثیر عمیق گذاشتن",
+      "meaning": "بر شکل‌گیری شخصیت یا ویژگی‌های کسی/چیزی اثر عمیق گذاشتن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4657,7 +4657,7 @@
     {
       "id": "b607",
       "word": "einen Streit beilegen",
-      "meaning": "دعوا را حل و فصل کردن",
+      "meaning": "اختلاف را حل‌وفصل کردن؛ به مشاجره پایان دادن",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "phrase",
@@ -4715,7 +4715,7 @@
     {
       "id": "b613",
       "word": "eine Ehe führen",
-      "meaning": "زندگی زناشویی داشتن",
+      "meaning": "زندگی زناشویی داشتن؛ با هم زندگی کردن",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "phrase",
@@ -5362,7 +5362,7 @@
     {
       "id": "b714",
       "word": "jdm. kündigen",
-      "meaning": "قرارداد کسی را لغو کردن",
+      "meaning": "به کسی اخطار پایان همکاری دادن؛ قرارداد کاری او را فسخ کردن",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "phrase",
@@ -5464,7 +5464,7 @@
     },
     {
       "id": "b727",
-      "word": "ein Praktikum machen /",
+      "word": "ein Praktikum machen",
       "meaning": "کارآموزی کردن",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5691,7 +5691,7 @@
     {
       "id": "b753",
       "word": "einen Kredit beantragen",
-      "meaning": "درخواست وام دادن",
+      "meaning": "برای دریافت وام درخواست دادن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -5708,8 +5708,8 @@
     },
     {
       "id": "b755",
-      "word": "einen Kredit abzahlen /",
-      "meaning": "وام را پرداخت کردن",
+      "word": "einen Kredit abzahlen",
+      "meaning": "قسط‌های وام را پرداخت کردن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -6404,7 +6404,7 @@
     {
       "id": "b855",
       "word": "jdm. bevorstehen",
-      "meaning": "در انتظار کسی بودن",
+      "meaning": "در پیش بودن؛ قرار است برای کسی رخ دهد",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6422,7 +6422,7 @@
     },
     {
       "id": "b857",
-      "word": "Jährige (!)",
+      "word": "...-Jährige",
       "meaning": "فرد ... ساله",
       "lesson": 12,
       "unit": "3.4 Zeit",
@@ -7075,7 +7075,7 @@
     {
       "id": "b938",
       "word": "etw. / jdn. schätzen",
-      "meaning": "قدر کسی/چیزی را دانستن",
+      "meaning": "کسی/چیزی را ارزشمند دانستن؛ ارج نهادن؛ همچنین تخمین زدن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7178,7 +7178,7 @@
     {
       "id": "b955",
       "word": "einwandern",
-      "meaning": "به کشوری مهاجرت کردن",
+      "meaning": "به کشور دیگری مهاجرت کردن و در آن ساکن شدن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "verb",
@@ -7196,7 +7196,7 @@
     {
       "id": "b960",
       "word": "flüchten",
-      "meaning": "فرار کردن، پناه بردن",
+      "meaning": "گریختن؛ برای فرار از خطر پناه بردن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "verb",
@@ -7241,7 +7241,7 @@
     {
       "id": "b967",
       "word": "eingebürgert werden",
-      "meaning": "تابعیت دریافت کردن",
+      "meaning": "تابعیت یک کشور را گرفتن؛ شهروند آن کشور شدن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7315,7 +7315,7 @@
     {
       "id": "b977",
       "word": "etw. genehmigen",
-      "meaning": "چیزی را تأیید/مجاز کردن",
+      "meaning": "اجازه دادن؛ تصویب یا تأیید رسمی کردن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7369,7 +7369,7 @@
     {
       "id": "b983",
       "word": "jdm. etw. vermitteln",
-      "meaning": "چیزی را به کسی منتقل کردن",
+      "meaning": "چیزی را به کسی منتقل یا آموزش دادن؛ واسطهٔ ارتباط شدن",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "phrase",
@@ -7569,7 +7569,7 @@
     {
       "id": "b1009",
       "word": "etw. bestreiten",
-      "meaning": "چیزی را انکار کردن",
+      "meaning": "چیزی را انکار یا مورد مناقشه قرار دادن؛ همچنین هزینه‌ای را تأمین کردن",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "phrase",
@@ -7578,7 +7578,7 @@
     {
       "id": "b1010",
       "word": "etw. widerlegen",
-      "meaning": "چیزی را رد کردن",
+      "meaning": "با دلیل یا شواهد نادرست بودن چیزی را نشان دادن؛ رد کردن",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "phrase",
@@ -8080,7 +8080,7 @@
     {
       "id": "b1078",
       "word": "gut ausgebaut sein",
-      "meaning": "توسعه‌یافته بودن (زیرساخت)",
+      "meaning": "به‌خوبی توسعه‌یافته بودن (مثلاً دربارهٔ زیرساخت یا شبکه)",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "phrase",
@@ -8125,7 +8125,7 @@
     {
       "id": "b1083",
       "word": "jdn. / etw. befördern",
-      "meaning": "حمل کردن",
+      "meaning": "کسی/چیزی را جابه‌جا یا حمل کردن؛ برای فرد: ترفیع دادن",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "phrase",
@@ -8240,7 +8240,7 @@
     {
       "id": "b1098",
       "word": "gelten",
-      "meaning": "اعتبار داشتن",
+      "meaning": "معتبر یا نافذ بودن؛ به شمار آمدن",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "verb",
@@ -8891,7 +8891,7 @@
     {
       "id": "b1177",
       "word": "Einheimische (!)",
-      "meaning": "فرد بومی",
+      "meaning": "der/die Einheimische",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "phrase",
@@ -8948,7 +8948,7 @@
     {
       "id": "b1183",
       "word": "etw. pflegen",
-      "meaning": "چیزی را حفظ/نگهداری کردن",
+      "meaning": "از چیزی مراقبت و نگهداری کردن؛ رسیدگی کردن",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "phrase",
@@ -8966,7 +8966,7 @@
     {
       "id": "b1185",
       "word": "exotisch",
-      "meaning": "عجیب و جذاب، اگزوتیک",
+      "meaning": "غریب یا غیرمعمول؛ متعلق به منطقه‌ای دوردست یا گرمسیری",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "adj/adv",
@@ -9247,7 +9247,7 @@
     {
       "id": "b1229",
       "word": "etw. subventionieren",
-      "meaning": "چیزی را یارانه دادن",
+      "meaning": "با کمک مالی یا یارانه حمایت کردن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "phrase",
@@ -9367,7 +9367,7 @@
     {
       "id": "b1246",
       "word": "etw. herstellen",
-      "meaning": "چیزی را تولید کردن",
+      "meaning": "تولید یا ساختن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "phrase",
@@ -9863,7 +9863,7 @@
     {
       "id": "b1306",
       "word": "etw. montieren",
-      "meaning": "نصب کردن، سوار کردن",
+      "meaning": "مونتاژ یا نصب کردن؛ قطعات را به هم وصل کردن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -9872,7 +9872,7 @@
     {
       "id": "b1307",
       "word": "etw. regulieren",
-      "meaning": "تنظیم کردن",
+      "meaning": "تنظیم یا کنترل کردن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -9881,7 +9881,7 @@
     {
       "id": "b1308",
       "word": "etw. einstellen",
-      "meaning": "تنظیم کردن",
+      "meaning": "تنظیم کردن؛ همچنین استخدام یا متوقف کردن، بسته به بافت",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -9890,7 +9890,7 @@
     {
       "id": "b1309",
       "word": "etw. bedienen",
-      "meaning": "کار با دستگاه کردن",
+      "meaning": "با دستگاه کار کردن؛ دستگاهی را به کار انداختن؛ همچنین به مشتری خدمت دادن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -9908,7 +9908,7 @@
     {
       "id": "b1311",
       "word": "etw. ausschalten",
-      "meaning": "چیزی را خاموش کردن",
+      "meaning": "خاموش کردن؛ از کار انداختن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -9974,7 +9974,7 @@
     {
       "id": "b1318",
       "word": "etw. warten",
-      "meaning": "تعمیر و نگهداری کردن",
+      "meaning": "سرویس و نگهداری کردن؛ از نظر فنی بررسی و تعمیرات دوره‌ای انجام دادن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -10040,7 +10040,7 @@
     },
     {
       "id": "b1333",
-      "word": "ein Signal übertragen /",
+      "word": "ein Signal übertragen",
       "meaning": "سیگنالی را منتقل کردن",
       "lesson": 20,
       "unit": "4.7 Technik",
@@ -10059,7 +10059,7 @@
     {
       "id": "b1336",
       "word": "etw. entschlüsseln",
-      "meaning": "رمزگشایی کردن",
+      "meaning": "رمزگشایی کردن؛ معنی پیام رمزگذاری‌شده را کشف کردن",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "phrase",
@@ -10302,7 +10302,7 @@
     {
       "id": "b1364",
       "word": "etw. nachschlagen",
-      "meaning": "(در کتاب/فرهنگ) جست‌وجو کردن",
+      "meaning": "برای یافتن اطلاعات به فرهنگ لغت، کتاب مرجع یا منبع مراجعه کردن",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "phrase",
@@ -10351,7 +10351,7 @@
     {
       "id": "b1369",
       "word": "etw. fortsetzen",
-      "meaning": "ادامه دادن",
+      "meaning": "چیزی را ادامه دادن",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "phrase",
@@ -10428,7 +10428,7 @@
     {
       "id": "b1380",
       "word": "etw. übertragen",
-      "meaning": "پخش کردن (مستقیم)",
+      "meaning": "منتقل کردن؛ انتقال دادن؛ پخش کردن (بسته به بافت)",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "phrase",
@@ -10822,7 +10822,7 @@
     {
       "id": "b1435",
       "word": "einbrechen",
-      "meaning": "سرقت با شکستن در کردن",
+      "meaning": "به زور وارد ساختمان شدن؛ دستبرد زدن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "verb",
@@ -10867,7 +10867,7 @@
     {
       "id": "b1443",
       "word": "ermitteln",
-      "meaning": "تحقیق کردن، بازجویی کردن",
+      "meaning": "تحقیق و بررسی کردن؛ کشف یا تعیین کردن (مثلاً هویت یا علت)",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "verb",
@@ -10903,7 +10903,7 @@
     {
       "id": "b1447",
       "word": "jdn. / etw. beobachten",
-      "meaning": "مشاهده کردن",
+      "meaning": "کسی/چیزی را زیر نظر گرفتن؛ مشاهده کردن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "phrase",
@@ -11117,7 +11117,7 @@
     {
       "id": "b1477",
       "word": "eine Strafe zur Bewährung aussetzen",
-      "meaning": "مجازاتی را مشروط/معلق کردن",
+      "meaning": "اجرای مجازات را به‌صورت مشروط معلق کردن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "phrase",
@@ -11754,7 +11754,7 @@
     {
       "id": "b1556",
       "word": "etw. ausstoßen",
-      "meaning": "منتشر کردن",
+      "meaning": "بیرون دادن یا منتشر کردن (مثلاً گاز، دود یا صدا)",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11905,7 +11905,7 @@
     {
       "id": "b1574",
       "word": "etw. überfluten",
-      "meaning": "سیل‌زده کردن",
+      "meaning": "با آب یا سیل پوشاندن؛ زیر آب بردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -12082,7 +12082,7 @@
     {
       "id": "b1594",
       "word": "einen Vorrat anlegen",
-      "meaning": "ذخیره‌سازی کردن",
+      "meaning": "ذخیره‌ای تهیه کردن و برای آینده نگه داشتن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -12130,7 +12130,7 @@
     {
       "id": "b1599",
       "word": "erschöpft sein",
-      "meaning": "تمام شده بودن، خسته بودن",
+      "meaning": "خسته و از پا افتاده بودن؛ همچنین تمام یا تهی شده بودن (برای منابع)",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -12212,7 +12212,7 @@
     {
       "id": "b1608",
       "word": "etw. bewahren / erhalten",
-      "meaning": "حفظ کردن",
+      "meaning": "حفظ کردن؛ نگه داشتن و از بین نرفتنِ چیزی را تضمین کردن",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "phrase",
@@ -12469,7 +12469,7 @@
     {
       "id": "b1634",
       "word": "etw. erbeuten",
-      "meaning": "چیزی را شکار کردن",
+      "meaning": "به دست آوردن یا غنیمت گرفتن؛ شکار کردن",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "phrase",
@@ -13013,7 +13013,7 @@
     {
       "id": "b1702",
       "word": "fest",
-      "meaning": "جامد",
+      "meaning": "محکم؛ جامد؛ ثابت (بسته به بافت)",
       "lesson": 26,
       "unit": "5.3 Chemie",
       "pos": "adj/adv",
