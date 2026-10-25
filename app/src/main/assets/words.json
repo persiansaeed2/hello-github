@@ -1400,7 +1400,7 @@
     },
     {
       "id": "b168",
-      "word": "auf dem Campus",
+      "word": "در محوطهٔ دانشگاه",
       "meaning": "در پردیس دانشگاه",
       "lesson": 2,
       "unit": "1.2 Studium",
@@ -2214,7 +2214,7 @@
     },
     {
       "id": "b284",
-      "word": "der Acker",
+      "word": "زمین زراعی؛ مزرعهٔ قابل کشت",
       "meaning": "زمین کشاورزی",
       "lesson": 4,
       "unit": "2.1 Ernährung",
@@ -2328,7 +2328,7 @@
     },
     {
       "id": "b296",
-      "word": "das Vieh",
+      "word": "احشام؛ دام‌های اهلی",
       "meaning": "دام",
       "lesson": 4,
       "unit": "2.1 Ernährung",
@@ -3399,7 +3399,7 @@
     },
     {
       "id": "b443",
-      "word": "das/der Virus",
+      "word": "das Virus / der Virus",
       "meaning": "ویروس",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
@@ -3920,7 +3920,7 @@
     },
     {
       "id": "b513",
-      "word": "der Athlet",
+      "word": "ورزشکار؛ به‌ویژه ورزشکار رشته‌های قدرتی یا رقابتی",
       "meaning": "ورزشکار، قهرمان",
       "lesson": 7,
       "unit": "2.4 Sport",
@@ -4028,7 +4028,7 @@
     },
     {
       "id": "b526",
-      "word": "den Gegner besiegen /",
+      "word": "den Gegner besiegen",
       "meaning": "حریف را شکست دادن",
       "lesson": 7,
       "unit": "2.4 Sport",
@@ -4846,7 +4846,7 @@
     },
     {
       "id": "b637",
-      "word": "das Jugendamt",
+      "word": "ادارهٔ خدمات رفاه و حمایت از کودکان و نوجوانان در آلمان",
       "meaning": "اداره بهزیستی کودک و نوجوان",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
@@ -5077,7 +5077,7 @@
     },
     {
       "id": "b664",
-      "word": "der Arbeitgeber / die",
+      "word": "der Arbeitgeber / die Arbeitgeberin",
       "meaning": "کارفرما",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5086,7 +5086,7 @@
     },
     {
       "id": "b666",
-      "word": "der Arbeitnehmer / die",
+      "word": "der Arbeitnehmer / die Arbeitnehmerin",
       "meaning": "کارمند، کارگر (شاغل)",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5144,7 +5144,7 @@
     {
       "id": "b674",
       "word": "der Arbeiter / die Arbeiterin",
-      "meaning": "کارگر",
+      "meaning": "der Arbeiter / die Arbeiterin",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "noun",
@@ -5152,7 +5152,7 @@
     },
     {
       "id": "b676",
-      "word": "Angestellte (!)",
+      "word": "der/die Angestellte",
       "meaning": "کارمند",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5161,7 +5161,7 @@
     },
     {
       "id": "b677",
-      "word": "der Beamte",
+      "word": "کارمند رسمی دولت؛ مأمور دولتی",
       "meaning": "کارمند دولت (رسمی)",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5189,7 +5189,7 @@
     },
     {
       "id": "b682",
-      "word": "der Akademiker / die",
+      "word": "der Akademiker / die Akademikerin",
       "meaning": "فارغ‌التحصیل دانشگاهی",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -6891,7 +6891,7 @@
     },
     {
       "id": "b916",
-      "word": "das Volk",
+      "word": "مردم؛ ملت؛ جمعیت یک کشور",
       "meaning": "ملت، مردم",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
@@ -7002,7 +7002,7 @@
     },
     {
       "id": "b928",
-      "word": "der Adel",
+      "word": "اشراف؛ طبقهٔ اشراف",
       "meaning": "اشراف",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
@@ -7065,7 +7065,7 @@
     },
     {
       "id": "b937",
-      "word": "das Ansehen",
+      "word": "اعتبار؛ وجهه و احترامی که دیگران برای کسی قائل‌اند",
       "meaning": "اعتبار، آبرو",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
@@ -8331,7 +8331,7 @@
     },
     {
       "id": "b1109",
-      "word": "das Bußgeld",
+      "word": "جریمهٔ نقدی (معمولاً بابت تخلف)",
       "meaning": "جریمه نقدی",
       "lesson": 17,
       "unit": "4.4 Verkehr",
@@ -10245,7 +10245,7 @@
     },
     {
       "id": "b1357",
-      "word": "auf dem Laufenden sein /",
+      "word": "auf dem Laufenden sein",
       "meaning": "در جریان بودن",
       "lesson": 21,
       "unit": "4.8 Medien",
@@ -10975,7 +10975,7 @@
     },
     {
       "id": "b1460",
-      "word": "Angeklagte (!)",
+      "word": "der/die Angeklagte",
       "meaning": "متهم",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
@@ -11875,7 +11875,7 @@
     },
     {
       "id": "b1570",
-      "word": "das Unwetter",
+      "word": "هوای بسیار بد و خطرناک؛ توفان شدید",
       "meaning": "توفان، آب‌وهوای بد",
       "lesson": 24,
       "unit": "5.1 Die Erde",
@@ -11885,7 +11885,7 @@
     },
     {
       "id": "b1571",
-      "word": "das Gewitter",
+      "word": "توفان همراه با رعدوبرق",
       "meaning": "رعدوبرق",
       "lesson": 24,
       "unit": "5.1 Die Erde",
@@ -12043,7 +12043,7 @@
     },
     {
       "id": "b1589",
-      "word": "das Gewässer",
+      "word": "پهنهٔ آبی؛ مانند رودخانه، دریاچه یا آبگیر",
       "meaning": "پهنه آبی (رودخانه، دریاچه و ...)",
       "lesson": 24,
       "unit": "5.1 Die Erde",
@@ -12449,7 +12449,7 @@
     },
     {
       "id": "b1632",
-      "word": "das Fell",
+      "word": "پوست حیوان همراه با مو یا خز",
       "meaning": "پوست خزدار",
       "lesson": 25,
       "unit": "5.2 Biologie",
@@ -12535,7 +12535,7 @@
     },
     {
       "id": "b1641",
-      "word": "der Ast",
+      "word": "شاخهٔ درخت",
       "meaning": "شاخه بزرگ",
       "lesson": 25,
       "unit": "5.2 Biologie",
@@ -12833,7 +12833,7 @@
     },
     {
       "id": "b1681",
-      "word": "das Kohlendioxid (CO",
+      "word": "das Kohlendioxid (CO₂)",
       "meaning": "دی‌اکسید کربن",
       "lesson": 26,
       "unit": "5.3 Chemie",
@@ -12853,7 +12853,7 @@
     },
     {
       "id": "b1683",
-      "word": "das Methan (CH",
+      "word": "das Methan (CH₄)",
       "meaning": "متان",
       "lesson": 26,
       "unit": "5.3 Chemie",
