@@ -1,6 +1,7 @@
 package com.example.solmaz
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -49,7 +50,16 @@ class MainActivity : ComponentActivity() {
                     )
                 }
                 val viewModel: TodayViewModel = viewModel(factory = factory)
-                val speaker = remember { AndroidSpeaker(context.applicationContext) }
+                val speaker = remember {
+                    AndroidSpeaker(context.applicationContext) { lang ->
+                        val message = if (lang == SpeechLang.GERMAN) {
+                            "صدای آلمانی روی گوشی نصب نیست. در تنظیمات › تبدیل متن به گفتار، داده‌ی زبان آلمانی را دانلود کنید."
+                        } else {
+                            "صدای فارسی روی گوشی نصب نیست."
+                        }
+                        Toast.makeText(context.applicationContext, message, Toast.LENGTH_LONG).show()
+                    }
+                }
                 val profile = remember { ProfileStore(context.applicationContext) }
                 var userName by remember { mutableStateOf(profile.name) }
                 DisposableEffect(speaker) {
