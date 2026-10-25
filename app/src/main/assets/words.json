@@ -4799,8 +4799,8 @@
     },
     {
       "id": "b632",
-      "word": "die Verwandten (!)",
-      "meaning": "خویشاوندان",
+      "word": "die Verwandten",
+      "meaning": "خویشاوندان؛ اعضای خانواده و بستگان",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -8890,8 +8890,8 @@
     },
     {
       "id": "b1177",
-      "word": "Einheimische (!)",
-      "meaning": "der/die Einheimische",
+      "word": "der/die Einheimische",
+      "meaning": "فرد بومی یا ساکن محلی",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "phrase",
@@ -10884,8 +10884,8 @@
     },
     {
       "id": "b1445",
-      "word": "Verdächtige (!)",
-      "meaning": "مظنون",
+      "word": "der/die Verdächtige",
+      "meaning": "فرد مظنون؛ کسی که احتمال می‌رود مرتکب جرم شده باشد",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "phrase",
@@ -11180,8 +11180,8 @@
     },
     {
       "id": "b1491",
-      "word": "Gläubige (!)",
-      "meaning": "مؤمن",
+      "word": "der/die Gläubige",
+      "meaning": "فرد باایمان یا مؤمن؛ کسی که به یک باور دینی اعتقاد دارد",
       "lesson": 23,
       "unit": "4.10 Religion",
       "pos": "phrase",
