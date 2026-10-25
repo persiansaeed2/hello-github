@@ -30,7 +30,7 @@ import com.example.solmaz.ui.AndroidSpeaker
 import com.example.solmaz.ui.NamePrompt
 import com.example.solmaz.ui.ReviewSessionScreen
 import com.example.solmaz.ui.SpeechLang
-import com.example.solmaz.ui.TodayScreen
+import com.example.solmaz.ui.SolmazNavigation
 import com.example.solmaz.ui.TodayViewModel
 import com.example.solmaz.ui.TodayViewModelFactory
 import com.example.solmaz.ui.components.AppBackground
@@ -103,11 +103,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-/**
- * The app is deliberately a single screen: today's colour-coded word list, with the
- * review cards layered on top of it. The Jalali calendar arrives later as a separate
- * destination once it is asked for.
- */
+/** Main app navigation: each home tile opens its own destination. */
 @Composable
 fun SolmazApp(
     viewModel: TodayViewModel,
@@ -126,24 +122,14 @@ fun SolmazApp(
                     .fillMaxSize()
                     .windowInsetsPadding(WindowInsets.safeDrawing)
             ) {
-                if (viewModel.sessionActive) {
-                    ReviewSessionScreen(
-                        vm = viewModel,
-                        onExit = { viewModel.exitSession() },
-                        onSpeak = onSpeak,
-                        userName = userName
-                    )
-                } else {
-                    TodayScreen(
-                        vm = viewModel,
-                        onStart = { viewModel.startSession() },
-                        userName = userName,
-                        loadError = loadError,
-                        onSpeak = onSpeak,
-                        speechRate = speechRate,
-                        onSpeechRate = onSpeechRate
-                    )
-                }
+                SolmazNavigation(
+                    vm = viewModel,
+                    userName = userName,
+                    loadError = loadError,
+                    onSpeak = onSpeak,
+                    speechRate = speechRate,
+                    onSpeechRate = onSpeechRate
+                )
             }
         }
     }
