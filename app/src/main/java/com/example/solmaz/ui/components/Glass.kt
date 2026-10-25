@@ -1,4 +1,4 @@
-package com.example.motalee.ui.components
+package com.example.solmaz.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -34,13 +34,13 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.example.motalee.ui.theme.Ink
-import com.example.motalee.ui.theme.Pink100
-import com.example.motalee.ui.theme.Pink200
-import com.example.motalee.ui.theme.Pink300
-import com.example.motalee.ui.theme.Pink400
-import com.example.motalee.ui.theme.Pink50
-import com.example.motalee.ui.theme.Pink500
+import com.example.solmaz.ui.theme.Ink
+import com.example.solmaz.ui.theme.Pink100
+import com.example.solmaz.ui.theme.Pink200
+import com.example.solmaz.ui.theme.Pink300
+import com.example.solmaz.ui.theme.Pink400
+import com.example.solmaz.ui.theme.Pink50
+import com.example.solmaz.ui.theme.Pink500
 
 /**
  * Soft white → pink canvas with out-of-focus pink glows: the backdrop that all

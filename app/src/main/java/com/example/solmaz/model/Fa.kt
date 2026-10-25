@@ -1,4 +1,4 @@
-package com.example.motalee.model
+package com.example.solmaz.model
 
 /** Persian digit / wording helpers shared by the whole UI. */
 

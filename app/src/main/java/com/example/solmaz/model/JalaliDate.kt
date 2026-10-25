@@ -1,4 +1,4 @@
-package com.example.motalee.model
+package com.example.solmaz.model
 
 import java.time.LocalDate
 

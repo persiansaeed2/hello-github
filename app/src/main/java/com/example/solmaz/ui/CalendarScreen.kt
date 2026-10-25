@@ -1,4 +1,4 @@
-package com.example.motalee.ui
+package com.example.solmaz.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -34,20 +34,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.motalee.model.JalaliCalendar
-import com.example.motalee.model.JalaliDate
-import com.example.motalee.model.fa
-import com.example.motalee.model.formatMinutes
-import com.example.motalee.ui.components.Chip
-import com.example.motalee.ui.components.GlassCard
-import com.example.motalee.ui.components.SectionHeader
-import com.example.motalee.ui.components.SessionRow
-import com.example.motalee.ui.theme.Ink
-import com.example.motalee.ui.theme.InkSoft
-import com.example.motalee.ui.theme.Pink100
-import com.example.motalee.ui.theme.Pink300
-import com.example.motalee.ui.theme.Pink400
-import com.example.motalee.ui.theme.Pink500
+import com.example.solmaz.model.JalaliCalendar
+import com.example.solmaz.model.JalaliDate
+import com.example.solmaz.model.fa
+import com.example.solmaz.model.formatMinutes
+import com.example.solmaz.ui.components.Chip
+import com.example.solmaz.ui.components.GlassCard
+import com.example.solmaz.ui.components.SectionHeader
+import com.example.solmaz.ui.components.SessionRow
+import com.example.solmaz.ui.theme.Ink
+import com.example.solmaz.ui.theme.InkSoft
+import com.example.solmaz.ui.theme.Pink100
+import com.example.solmaz.ui.theme.Pink300
+import com.example.solmaz.ui.theme.Pink400
+import com.example.solmaz.ui.theme.Pink500
 
 @Composable
 fun CalendarScreen(

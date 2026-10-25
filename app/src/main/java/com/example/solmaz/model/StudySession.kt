@@ -1,4 +1,4 @@
-package com.example.motalee.model
+package com.example.solmaz.model
 
 /** One study block: how many minutes were studied on which day for which subject. */
 data class StudySession(

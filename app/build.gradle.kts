@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.motalee"
+    namespace = "com.example.solmaz"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.motalee"
+        applicationId = "com.example.solmaz"
         // java.time is used directly, so 26 is the lowest API level without desugaring.
         minSdk = 26
         targetSdk = 34

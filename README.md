@@ -1,8 +1,16 @@
-# مطالعه — اپلیکیشن ثبت مطالعه با تقویم شمسی
+# SOLMAZ — اپلیکیشن ثبت مطالعه با تقویم شمسی
 
-اپ اندروید بومی (Kotlin + Jetpack Compose) برای ثبت جلسه‌های مطالعه روی **تقویم شمسی (جلالی)**.
-طراحی با تم **سفید + صورتی** و زبان بصری **macOS جدید (Liquid Glass)**: سطوح نیمه‌شفاف،
-گوشه‌های نرم، سایه‌های محو صورتی و فونت وزیرمتن.
+اپ اندروید بومی (Kotlin + Jetpack Compose) با نام **SOLMAZ** برای ثبت جلسه‌های مطالعه روی
+**تقویم شمسی (جلالی)**. طراحی با تم **سفید + صورتی** و زبان بصری **macOS جدید (Liquid Glass)**:
+سطوح نیمه‌شفاف، گوشه‌های نرم، سایه‌های محو صورتی و فونت وزیرمتن. آیکون اپ یک گل سفید هشت‌پر
+با مرکز زرد روی زمینهٔ صورتی است که به‌صورت وکتور رسم شده و در همهٔ چگالی‌ها تیز می‌ماند.
+
+| | |
+|---|---|
+| **شناسهٔ اپ (package)** | `com.example.solmaz` |
+| **نام نمایشی** | SOLMAZ |
+
+<p align="center"><img src="design/solmaz-icon.png" width="180" alt="SOLMAZ icon"></p>
 
 ## امکانات
 
@@ -27,10 +35,10 @@
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-APK آمادهٔ نصب (دیباگ) در [`dist/motalee-debug.apk`](dist/motalee-debug.apk) هم موجود است:
+APK آمادهٔ نصب (دیباگ) در [`dist/solmaz-debug.apk`](dist/solmaz-debug.apk) هم موجود است:
 
 ```bash
-adb install -r dist/motalee-debug.apk
+adb install -r dist/solmaz-debug.apk
 ```
 
 یا پروژه را با **Android Studio** باز کنید (File ▸ Open) و Run بزنید.
@@ -38,7 +46,7 @@ adb install -r dist/motalee-debug.apk
 ## ساختار پروژه
 
 ```
-app/src/main/java/com/example/motalee/
+app/src/main/java/com/example/solmaz/
 ├── MainActivity.kt              # تک‌اکتیویتی + چیدمان کلی، تب‌ها، دیالوگ
 ├── data/StudyRepository.kt      # ذخیره/بازیابی جلسه‌ها با JSON در SharedPreferences
 ├── model/
@@ -51,7 +59,7 @@ app/src/main/java/com/example/motalee/
     ├── AddSessionDialog.kt
     ├── components/              # GlassCard، ProgressRing، GlassTabBar، SessionRow…
     └── theme/Theme.kt           # پالت سفید/صورتی، تایپوگرافی وزیرمتن، شکل‌ها
-app/src/test/java/com/example/motalee/model/JalaliDateTest.kt
+app/src/test/java/com/example/solmaz/model/JalaliDateTest.kt
 ```
 
 ## تقویم شمسی

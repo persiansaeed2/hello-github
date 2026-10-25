@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 108 108">
+<defs>
+<radialGradient id="c" cx="0.45" cy="0.42" r="0.6">
+<stop offset="0" stop-color="#FFE96B"/><stop offset="0.5" stop-color="#FFD129"/>
+<stop offset="1" stop-color="#EFA400"/></radialGradient>
+<linearGradient id="p0" gradientUnits="userSpaceOnUse" x1="43.44" y1="40.56" x2="64.56" y2="40.56">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p1" gradientUnits="userSpaceOnUse" x1="56.04" y1="37.03" x2="70.97" y2="51.96">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p2" gradientUnits="userSpaceOnUse" x1="67.44" y1="43.44" x2="67.44" y2="64.56">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p3" gradientUnits="userSpaceOnUse" x1="70.97" y1="56.04" x2="56.04" y2="70.97">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p4" gradientUnits="userSpaceOnUse" x1="64.56" y1="67.44" x2="43.44" y2="67.44">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p5" gradientUnits="userSpaceOnUse" x1="51.96" y1="70.97" x2="37.03" y2="56.04">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p6" gradientUnits="userSpaceOnUse" x1="40.56" y1="64.56" x2="40.56" y2="43.44">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+<linearGradient id="p7" gradientUnits="userSpaceOnUse" x1="37.03" y1="51.96" x2="51.96" y2="37.03">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#F8F5F8"/>
+<stop offset="1" stop-color="#DFD6E0"/></linearGradient>
+</defs>
+<rect width="108" height="108" rx="24" fill="#F9A2C6"/>
+<path d="M49.2,42 Q42.24,34.8 54,22 Q65.76,34.8 58.8,42 Z" fill="url(#p0)"/>
+<path d="M59.09,42.12 Q59.26,32.11 76.63,31.37 Q75.89,48.74 65.88,48.91 Z" fill="url(#p1)"/>
+<path d="M66,49.2 Q73.2,42.24 86,54 Q73.2,65.76 66,58.8 Z" fill="url(#p2)"/>
+<path d="M65.88,59.09 Q75.89,59.26 76.63,76.63 Q59.26,75.89 59.09,65.88 Z" fill="url(#p3)"/>
+<path d="M58.8,66 Q65.76,73.2 54,86 Q42.24,73.2 49.2,66 Z" fill="url(#p4)"/>
+<path d="M48.91,65.88 Q48.74,75.89 31.37,76.63 Q32.11,59.26 42.12,59.09 Z" fill="url(#p5)"/>
+<path d="M42,58.8 Q34.8,65.76 22,54 Q34.8,42.24 42,49.2 Z" fill="url(#p6)"/>
+<path d="M42.12,48.91 Q32.11,48.74 31.37,31.37 Q48.74,32.11 48.91,42.12 Z" fill="url(#p7)"/>
+<circle cx="54" cy="54" r="13" fill="url(#c)"/>
+<ellipse cx="49.5" cy="47" rx="5.4" ry="3.8" fill="#FFFFFF" opacity="0.35"/>
+</svg>

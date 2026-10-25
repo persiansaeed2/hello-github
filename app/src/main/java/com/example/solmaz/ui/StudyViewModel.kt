@@ -1,4 +1,4 @@
-package com.example.motalee.ui
+package com.example.solmaz.ui
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -7,10 +7,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.motalee.data.StudyStore
-import com.example.motalee.model.JalaliCalendar
-import com.example.motalee.model.JalaliDate
-import com.example.motalee.model.StudySession
+import com.example.solmaz.data.StudyStore
+import com.example.solmaz.model.JalaliCalendar
+import com.example.solmaz.model.JalaliDate
+import com.example.solmaz.model.StudySession
 
 /** A day plus how long it was studied — used by the charts. */
 data class DayStat(val date: JalaliDate, val minutes: Int)

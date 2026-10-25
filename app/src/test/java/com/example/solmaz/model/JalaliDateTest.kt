@@ -1,4 +1,4 @@
-package com.example.motalee.model
+package com.example.solmaz.model
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse

@@ -1,7 +1,7 @@
-package com.example.motalee.data
+package com.example.solmaz.data
 
 import android.content.Context
-import com.example.motalee.model.StudySession
+import com.example.solmaz.model.StudySession
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -54,7 +54,7 @@ class StudyRepository(context: Context) : StudyStore {
     }
 
     private companion object {
-        const val PREFS_NAME = "motalee_prefs"
+        const val PREFS_NAME = "solmaz_prefs"
         const val KEY_SESSIONS = "sessions"
         const val DEFAULT_SUBJECT = "مطالعه"
     }

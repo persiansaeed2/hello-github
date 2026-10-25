@@ -1,11 +1,11 @@
-package com.example.motalee.data
+package com.example.solmaz.data
 
-import com.example.motalee.model.StudySession
+import com.example.solmaz.model.StudySession
 
 /**
  * Storage abstraction for study sessions.
  *
- * The UI only ever talks to this interface, which keeps [com.example.motalee.ui.StudyViewModel]
+ * The UI only ever talks to this interface, which keeps [com.example.solmaz.ui.StudyViewModel]
  * testable on the JVM (in-memory fake) and makes swapping SharedPreferences for Room a
  * one-line change.
  */

@@ -1,4 +1,4 @@
-package com.example.motalee
+package com.example.solmaz
 
 import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule

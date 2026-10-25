@@ -1,9 +1,9 @@
-package com.example.motalee.ui
+package com.example.solmaz.ui
 
-import com.example.motalee.data.StudyStore
-import com.example.motalee.model.JalaliCalendar
-import com.example.motalee.model.JalaliDate
-import com.example.motalee.model.StudySession
+import com.example.solmaz.data.StudyStore
+import com.example.solmaz.model.JalaliCalendar
+import com.example.solmaz.model.JalaliDate
+import com.example.solmaz.model.StudySession
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue

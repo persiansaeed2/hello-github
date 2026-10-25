@@ -1,4 +1,4 @@
-package com.example.motalee.ui
+package com.example.solmaz.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -30,14 +30,14 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
-import com.example.motalee.model.JalaliCalendar
-import com.example.motalee.model.JalaliDate
-import com.example.motalee.model.fa
-import com.example.motalee.ui.components.GlassCard
-import com.example.motalee.ui.theme.Ink
-import com.example.motalee.ui.theme.InkSoft
-import com.example.motalee.ui.theme.Pink100
-import com.example.motalee.ui.theme.Pink500
+import com.example.solmaz.model.JalaliCalendar
+import com.example.solmaz.model.JalaliDate
+import com.example.solmaz.model.fa
+import com.example.solmaz.ui.components.GlassCard
+import com.example.solmaz.ui.theme.Ink
+import com.example.solmaz.ui.theme.InkSoft
+import com.example.solmaz.ui.theme.Pink100
+import com.example.solmaz.ui.theme.Pink500
 
 private val PRESETS = listOf(15, 30, 45, 60, 90, 120)
 

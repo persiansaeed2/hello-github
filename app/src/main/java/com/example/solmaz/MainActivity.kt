@@ -1,4 +1,4 @@
-package com.example.motalee
+package com.example.solmaz
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -29,37 +29,37 @@ import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.safeDrawing
-import com.example.motalee.data.StudyRepository
-import com.example.motalee.model.JalaliCalendar
-import com.example.motalee.ui.AddSessionDialog
-import com.example.motalee.ui.CalendarScreen
-import com.example.motalee.ui.StatsScreen
-import com.example.motalee.ui.StudyViewModel
-import com.example.motalee.ui.StudyViewModelFactory
-import com.example.motalee.ui.TodayScreen
-import com.example.motalee.ui.components.AppBackground
-import com.example.motalee.ui.components.GlassTabBar
-import com.example.motalee.ui.theme.MotaleeTheme
+import com.example.solmaz.data.StudyRepository
+import com.example.solmaz.model.JalaliCalendar
+import com.example.solmaz.ui.AddSessionDialog
+import com.example.solmaz.ui.CalendarScreen
+import com.example.solmaz.ui.StatsScreen
+import com.example.solmaz.ui.StudyViewModel
+import com.example.solmaz.ui.StudyViewModelFactory
+import com.example.solmaz.ui.TodayScreen
+import com.example.solmaz.ui.components.AppBackground
+import com.example.solmaz.ui.components.GlassTabBar
+import com.example.solmaz.ui.theme.SolmazTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MotaleeTheme {
+            SolmazTheme {
                 val context = LocalContext.current
                 val factory = remember {
                     StudyViewModelFactory(StudyRepository(context.applicationContext))
                 }
                 val viewModel: StudyViewModel = viewModel(factory = factory)
-                MotaleeApp(viewModel)
+                SolmazApp(viewModel)
             }
         }
     }
 }
 
 @Composable
-fun MotaleeApp(vm: StudyViewModel) {
+fun SolmazApp(vm: StudyViewModel) {
     var tab by rememberSaveable { mutableIntStateOf(0) }
     // null = dialog closed, otherwise the day the session is being added to.
     var addForDay by remember { mutableStateOf<Long?>(null) }

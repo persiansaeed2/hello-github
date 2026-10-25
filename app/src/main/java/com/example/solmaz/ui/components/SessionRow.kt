@@ -1,4 +1,4 @@
-package com.example.motalee.ui.components
+package com.example.solmaz.ui.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -18,11 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.motalee.model.StudySession
-import com.example.motalee.model.fa
-import com.example.motalee.ui.theme.Ink
-import com.example.motalee.ui.theme.InkSoft
-import com.example.motalee.ui.theme.Pink300
+import com.example.solmaz.model.StudySession
+import com.example.solmaz.model.fa
+import com.example.solmaz.ui.theme.Ink
+import com.example.solmaz.ui.theme.InkSoft
+import com.example.solmaz.ui.theme.Pink300
 
 /** One study session inside a glass card, shared by the today and calendar screens. */
 @Composable

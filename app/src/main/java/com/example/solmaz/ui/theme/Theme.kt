@@ -1,4 +1,4 @@
-package com.example.motalee.ui.theme
+package com.example.solmaz.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.motalee.R
+import com.example.solmaz.R
 
 // ---------------------------------------------------------------- palette
 // White paper + pink accents, the way macOS Tahoe's Liquid Glass surfaces look:
@@ -93,7 +93,7 @@ private val AppColors = lightColorScheme(
 )
 
 @Composable
-fun MotaleeTheme(content: @Composable () -> Unit) {
+fun SolmazTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = AppColors,
         typography = AppTypography,
