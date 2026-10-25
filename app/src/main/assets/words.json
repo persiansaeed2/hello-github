@@ -911,7 +911,7 @@
     },
     {
       "id": "b103",
-      "word": "der Studienbewerber /",
+      "word": "der Studienbewerber / die Studienbewerberin",
       "meaning": "متقاضی ورود به دانشگاه",
       "lesson": 2,
       "unit": "1.2 Studium",
@@ -1060,7 +1060,7 @@
     },
     {
       "id": "b122",
-      "word": "der Hochschulabsolvent /",
+      "word": "der Hochschulabsolvent / die Hochschulabsolventin",
       "meaning": "فارغ‌التحصیل دانشگاه",
       "lesson": 2,
       "unit": "1.2 Studium",
@@ -1277,7 +1277,7 @@
     {
       "id": "b153",
       "word": "der Kreditpunkt",
-      "meaning": "امتیاز واحد (کردیت)",
+      "meaning": "واحد اعتباری دانشگاهی (ECTS)، نه «امتیاز» به معنای عمومی",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "noun",
@@ -1534,7 +1534,7 @@
     {
       "id": "b194",
       "word": "die Disziplin",
-      "meaning": "رشته علمی، شاخه",
+      "meaning": "رشته یا شاخهٔ علمی؛ همچنین انضباط",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "noun",
@@ -1561,7 +1561,7 @@
     },
     {
       "id": "b200",
-      "word": "der Nachwuchswissenschaftler /",
+      "word": "der Nachwuchswissenschaftler / die Nachwuchswissenschaftlerin",
       "meaning": "پژوهشگر جوان، دانشمند تازه‌کار",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
@@ -1709,7 +1709,7 @@
     {
       "id": "b218",
       "word": "der Durchbruch",
-      "meaning": "پیشرفت چشمگیر",
+      "meaning": "دستاورد یا پیشرفت تعیین‌کننده؛ گشایش مهم",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "noun",
@@ -3182,7 +3182,7 @@
     {
       "id": "b417",
       "word": "die Beschwerden",
-      "meaning": "ناراحتی‌ها، شکایات بیماری",
+      "meaning": "علائم و ناراحتی‌های جسمی؛ همچنین شکایت‌ها، بسته به بافت",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "noun",
@@ -4056,7 +4056,7 @@
     {
       "id": "b529",
       "word": "der Sieger",
-      "meaning": "برنده",
+      "meaning": "برنده؛ پیروز",
       "lesson": 7,
       "unit": "2.4 Sport",
       "pos": "noun",
@@ -4149,7 +4149,7 @@
     {
       "id": "b549",
       "word": "der Reiz",
-      "meaning": "محرک",
+      "meaning": "محرک؛ عامل برانگیزاننده یا جذابیت",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "noun",
@@ -4169,7 +4169,7 @@
     {
       "id": "b551",
       "word": "der Sinn",
-      "meaning": "حس",
+      "meaning": "معنا؛ مفهوم؛ منظور (و در بعضی بافت‌ها: حس)",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "noun",
@@ -4751,7 +4751,7 @@
     {
       "id": "b618",
       "word": "die eingetragene Lebenspartnerschaft",
-      "meaning": "همزیستی ثبت‌شده (پیمان زندگی مشترک)",
+      "meaning": "شراکت زندگی ثبت‌شده؛ نوعی پیوند قانونی مدنی در آلمان",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -4809,7 +4809,7 @@
     {
       "id": "b633",
       "word": "die Angehörigen",
-      "meaning": "اعضای خانواده، وابستگان",
+      "meaning": "بستگان؛ اعضای خانواده یا نزدیکان",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -5134,7 +5134,7 @@
     },
     {
       "id": "b672",
-      "word": "der Mitarbeiter / die",
+      "word": "der Mitarbeiter / die Mitarbeiterin",
       "meaning": "همکار، کارمند",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5262,7 +5262,7 @@
     {
       "id": "b698",
       "word": "die Arbeitsagentur",
-      "meaning": "اداره کار (آژانس کاریابی)",
+      "meaning": "ادارهٔ کاریابی و خدمات اشتغال آلمان",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "noun",
@@ -5316,7 +5316,7 @@
     },
     {
       "id": "b709",
-      "word": "der Personalleiter /",
+      "word": "der Personalleiter / die Personalleiterin",
       "meaning": "مدیر منابع انسانی",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
@@ -5830,7 +5830,7 @@
     {
       "id": "b769",
       "word": "der Umsatz",
-      "meaning": "گردش مالی، فروش",
+      "meaning": "میزان فروش؛ گردش مالی",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "noun",
@@ -6074,7 +6074,7 @@
     {
       "id": "b807",
       "word": "der Sozialbeitrag",
-      "meaning": "حق عضویت اجتماعی دانشجویی",
+      "meaning": "حق بیمه یا سهم پرداختی به نظام تأمین اجتماعی",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "noun",
@@ -6707,7 +6707,7 @@
     },
     {
       "id": "b894",
-      "word": "der Schauspieler / die",
+      "word": "der Schauspieler / die Schauspielerin",
       "meaning": "بازیگر",
       "lesson": 13,
       "unit": "3.5 Freizeit",
@@ -6845,7 +6845,7 @@
     },
     {
       "id": "b910",
-      "word": "die Bevölkerung schrumpft /",
+      "word": "die Bevölkerung schrumpft",
       "meaning": "جمعیت کاهش می‌یابد",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
@@ -6902,7 +6902,7 @@
     {
       "id": "b917",
       "word": "der Stamm",
-      "meaning": "قبیله",
+      "meaning": "تنهٔ درخت؛ تبار یا قبیله (بسته به بافت)",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "noun",
@@ -7030,7 +7030,7 @@
     {
       "id": "b931",
       "word": "die Armut",
-      "meaning": "فقر",
+      "meaning": "فقر؛ محرومیت از امکانات و منابع کافی",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "noun",
@@ -7433,7 +7433,7 @@
     {
       "id": "b991",
       "word": "der Laut",
-      "meaning": "صدا، واج",
+      "meaning": "آوا یا صدای گفتاری؛ در زبان‌شناسی: واج/آوا",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "noun",
@@ -8202,7 +8202,7 @@
     {
       "id": "b1092",
       "word": "der Verkehrsteilnehmer",
-      "meaning": "کاربر راه (شرکت‌کننده در ترافیک)",
+      "meaning": "فردی که در رفت‌وآمد جاده‌ای شرکت دارد؛ مانند راننده، دوچرخه‌سوار یا عابر",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "noun",
@@ -8295,7 +8295,7 @@
     {
       "id": "b1104",
       "word": "der TÜV",
-      "meaning": "معاینه فنی خودرو",
+      "meaning": "سازمان بازرسی فنی آلمان؛ در کاربرد روزمره اغلب به معاینهٔ فنی خودرو اشاره دارد",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "noun",
@@ -8495,7 +8495,7 @@
     {
       "id": "b1126",
       "word": "der Berufsverkehr",
-      "meaning": "ترافیک ساعات کاری",
+      "meaning": "ترافیک رفت‌وآمد روزانهٔ شاغلان، به‌ویژه در ساعات اوج",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "noun",
@@ -8681,7 +8681,7 @@
     {
       "id": "b1146",
       "word": "der Cluburlaub",
-      "meaning": "تعطیلات در کلاب/ریزورت",
+      "meaning": "تعطیلات در مجموعهٔ تفریحیِ باشگاهی با امکانات و برنامه‌های سازمان‌یافته",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "noun",
@@ -8730,7 +8730,7 @@
     {
       "id": "b1151",
       "word": "der sanfte / nachhaltige Tourismus",
-      "meaning": "گردشگری ملایم/پایدار",
+      "meaning": "گردشگری مسئولانه و پایدار با کمترین آسیب به محیط‌زیست و جوامع محلی",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "noun",
@@ -8938,7 +8938,7 @@
     {
       "id": "b1182",
       "word": "der Brauch",
-      "meaning": "آیین، سنت",
+      "meaning": "رسم؛ سنت رایج",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "noun",
@@ -9125,7 +9125,7 @@
     {
       "id": "b1206",
       "word": "der Betrieb",
-      "meaning": "شرکت، کارگاه",
+      "meaning": "محل کار یا واحد تجاری/صنعتی؛ فعالیت و کارکرد، بسته به بافت",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "noun",
@@ -9143,7 +9143,7 @@
     },
     {
       "id": "b1208",
-      "word": "der Geschäftsführer /die Ge-",
+      "word": "der Geschäftsführer / die Geschäftsführerin",
       "meaning": "مدیر عامل",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
@@ -9738,7 +9738,7 @@
     {
       "id": "b1289",
       "word": "der Schall",
-      "meaning": "صوت",
+      "meaning": "صوت؛ موجی که در محیط منتشر می‌شود",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -9813,7 +9813,7 @@
     {
       "id": "b1301",
       "word": "die Anlage",
-      "meaning": "تأسیسات، سیستم",
+      "meaning": "تأسیسات؛ سامانه؛ ضمیمه (بسته به بافت)",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -9917,7 +9917,7 @@
     {
       "id": "b1312",
       "word": "der Schalter",
-      "meaning": "کلید",
+      "meaning": "کلید؛ همچنین باجه یا پیشخوان خدمات",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -10021,7 +10021,7 @@
     {
       "id": "b1331",
       "word": "der Datenträger",
-      "meaning": "رسانه ذخیره داده",
+      "meaning": "رسانهٔ ذخیره‌سازی داده‌ها",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -10086,7 +10086,7 @@
     {
       "id": "b1339",
       "word": "der Funkmast",
-      "meaning": "دکل مخابراتی",
+      "meaning": "دکل مخابراتی/آنتن ارتباطات بی‌سیم",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "noun",
@@ -10283,7 +10283,7 @@
     {
       "id": "b1362",
       "word": "die Auflage",
-      "meaning": "تیراژ",
+      "meaning": "تیراژ یا نوبت چاپ (برای کتاب و نشریه)؛ همچنین شرط یا الزام، بسته به بافت",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "noun",
@@ -10379,7 +10379,7 @@
     {
       "id": "b1373",
       "word": "die Doku-Soap",
-      "meaning": "مستند-سریالی",
+      "meaning": "مجموعهٔ تلویزیونی واقع‌نما با ساختار سریالی",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "noun",
@@ -10409,7 +10409,7 @@
     {
       "id": "b1376",
       "word": "der Krimi",
-      "meaning": "فیلم/رمان جنایی",
+      "meaning": "داستان، فیلم یا مجموعهٔ جنایی/کارآگاهی",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "noun",
@@ -10957,7 +10957,7 @@
     },
     {
       "id": "b1457",
-      "word": "der Staatsanwalt / die",
+      "word": "der Staatsanwalt / die Staatsanwältin",
       "meaning": "دادستان",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
@@ -11108,7 +11108,7 @@
     {
       "id": "b1476",
       "word": "die Bewährung",
-      "meaning": "تعلیق مجازات (آزادی مشروط)",
+      "meaning": "دورهٔ آزمایشی تحت نظارت؛ آزادی مشروط/تعلیق اجرای مجازات (بسته به نظام حقوقی)",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "noun",
@@ -11345,7 +11345,7 @@
     {
       "id": "b1509",
       "word": "der Pol",
-      "meaning": "قطب",
+      "meaning": "قطب؛ همچنین سر یا انتهای یک محور/جسم",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "noun",
@@ -11505,7 +11505,7 @@
     {
       "id": "b1526",
       "word": "der Umwelt schaden",
-      "meaning": "به محیط زیست آسیب زدن",
+      "meaning": "به محیط‌زیست آسیب زدن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -12400,7 +12400,7 @@
     {
       "id": "b1627",
       "word": "der Rüssel",
-      "meaning": "خرطوم",
+      "meaning": "خرطوم (مثلاً فیل)؛ پوزهٔ کشیدهٔ برخی جانوران",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
@@ -12410,7 +12410,7 @@
     {
       "id": "b1628",
       "word": "der Panzer",
-      "meaning": "زره، کاسه محافظ",
+      "meaning": "تانک؛ همچنین زره یا پوستهٔ سخت، بسته به بافت",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
@@ -12604,7 +12604,7 @@
     {
       "id": "b1648",
       "word": "der Pollen",
-      "meaning": "گرده",
+      "meaning": "گردهٔ گیاه",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "noun",
