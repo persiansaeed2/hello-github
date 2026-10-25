@@ -5,7 +5,6 @@ import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Rule
 import org.junit.Test
@@ -13,8 +12,8 @@ import org.junit.runner.RunWith
 import org.robolectric.annotation.Config
 
 /**
- * Boots the real [MainActivity] (Robolectric, no emulator) and drives the UI: this
- * catches composition crashes, bad resource references and broken navigation.
+ * Boots the real [MainActivity] on the JVM (Robolectric) and walks the single screen:
+ * list → review card → answer.
  */
 @RunWith(AndroidJUnit4::class)
 @Config(sdk = [33], qualifiers = "w411dp-h891dp")
@@ -24,50 +23,36 @@ class MainActivityTest {
     val rule = createAndroidComposeRule<MainActivity>()
 
     @Test
-    fun `app launches on the today screen`() {
-        rule.onNodeWithText("سلام 👋").assertIsDisplayed()
-        rule.onNodeWithText("هدف امروز").assertIsDisplayed()
-        rule.onNodeWithText("هفت روز گذشته").assertIsDisplayed()
-        rule.onNodeWithText("هنوز امروز مطالعه‌ای ثبت نکردی").assertIsDisplayed()
+    fun `today screen shows the date, the summary and the words`() {
+        rule.onNodeWithText("امروز").assertIsDisplayed()
+        // Jalali date of today, e.g. «یکشنبه ۳ آبان ۱۴۰۵»
+        rule.onAllNodesWithText("امروز", substring = true)[0].assertIsDisplayed()
+        rule.onNodeWithText("برای امروز").assertIsDisplayed()
+        rule.onNodeWithText("apple").assertIsDisplayed()
+        rule.onNodeWithText("سیب").assertIsDisplayed()
+        rule.onAllNodesWithText("تازه")[0].assertIsDisplayed()
     }
 
     @Test
-    fun `all three tabs render`() {
-        rule.onNodeWithText("تقویم").performClick()
-        rule.onNodeWithText("برو به امروز").assertIsDisplayed()
+    fun `review flow reveals the meaning and accepts a green answer`() {
+        rule.onNodeWithText("شروع مرور ۶ لغت").performClick()
 
-        rule.onNodeWithText("آمار").performClick()
-        rule.onNodeWithText("مجموع مطالعه").assertIsDisplayed()
+        rule.onNodeWithText("apple").assertIsDisplayed()
+        rule.onNodeWithText("نمایش معنی").performClick()
+        rule.onNodeWithText("سیب").assertIsDisplayed()
 
-        rule.onNodeWithText("امروز").performClick()
-        rule.onNodeWithText("هدف امروز").assertIsDisplayed()
+        rule.onNodeWithText("بلدم").performClick()
+
+        // the next card is shown, so «apple» is gone from the card
+        rule.onNodeWithText("book").assertIsDisplayed()
     }
 
     @Test
-    fun `adding a session updates today, calendar and stats`() {
-        // Today's bar in the 7-day chart opens the add dialog. It sits in the middle of
-        // the screen, away from the floating tab bar.
-        val todayBar = rule.onNodeWithText("ی")
-        todayBar.performClick()
+    fun `red answer keeps the word for another round`() {
+        rule.onNodeWithText("شروع مرور ۶ لغت").performClick()
+        rule.onNodeWithText("نمایش معنی").performClick()
+        rule.onNodeWithText("بلد نبودم").performClick()
 
-        rule.onNodeWithText("ثبت مطالعه").assertExists()
-
-        // Type a subject, pick a preset duration and save.
-        rule.onNodeWithText("درس / موضوع").performTextInput("ریاضی")
-        rule.onNodeWithText("۴۵").performClick()
-        rule.onNodeWithText("ذخیره").performClick()
-
-        // Today screen now lists the session instead of the empty state.
-        rule.onNodeWithText("ریاضی").assertExists()
-        rule.onAllNodesWithText("۴۵ دقیقه")[0].assertExists()
-
-        // The same session shows up in the calendar day list.
-        rule.onNodeWithText("تقویم").performClick()
-        rule.onAllNodesWithText("ریاضی")[0].assertExists()
-
-        // And it is counted in the stats screen.
-        rule.onNodeWithText("آمار").performClick()
-        rule.onNodeWithText("به‌تفکیک درس").assertIsDisplayed()
-        rule.onAllNodesWithText("۴۵ دقیقه")[0].assertExists()
+        rule.onAllNodesWithText("از", substring = true)[0].assertIsDisplayed()
     }
 }

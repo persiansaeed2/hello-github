@@ -5,40 +5,25 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.WindowInsetsSides
-import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.only
-import androidx.compose.foundation.layout.safeDrawing
-import com.example.solmaz.data.StudyRepository
-import com.example.solmaz.model.JalaliCalendar
-import com.example.solmaz.ui.AddSessionDialog
-import com.example.solmaz.ui.CalendarScreen
-import com.example.solmaz.ui.StatsScreen
-import com.example.solmaz.ui.StudyViewModel
-import com.example.solmaz.ui.StudyViewModelFactory
+import com.example.solmaz.data.PrefsProgressStore
+import com.example.solmaz.data.WordSource
+import com.example.solmaz.ui.ReviewSessionScreen
 import com.example.solmaz.ui.TodayScreen
+import com.example.solmaz.ui.TodayViewModel
+import com.example.solmaz.ui.TodayViewModelFactory
 import com.example.solmaz.ui.components.AppBackground
-import com.example.solmaz.ui.components.GlassTabBar
 import com.example.solmaz.ui.theme.SolmazTheme
 
 class MainActivity : ComponentActivity() {
@@ -48,22 +33,27 @@ class MainActivity : ComponentActivity() {
         setContent {
             SolmazTheme {
                 val context = LocalContext.current
+                val load = remember { WordSource(context.applicationContext).load() }
                 val factory = remember {
-                    StudyViewModelFactory(StudyRepository(context.applicationContext))
+                    TodayViewModelFactory(
+                        words = load.words,
+                        store = PrefsProgressStore(context.applicationContext)
+                    )
                 }
-                val viewModel: StudyViewModel = viewModel(factory = factory)
-                SolmazApp(viewModel)
+                val viewModel: TodayViewModel = viewModel(factory = factory)
+                SolmazApp(viewModel = viewModel, loadError = load.error)
             }
         }
     }
 }
 
+/**
+ * The app is deliberately a single screen: today's colour-coded word list, with the
+ * review cards layered on top of it. The Jalali calendar arrives later as a separate
+ * destination once it is asked for.
+ */
 @Composable
-fun SolmazApp(vm: StudyViewModel) {
-    var tab by rememberSaveable { mutableIntStateOf(0) }
-    // null = dialog closed, otherwise the day the session is being added to.
-    var addForDay by remember { mutableStateOf<Long?>(null) }
-
+fun SolmazApp(viewModel: TodayViewModel, loadError: String? = null) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Box(modifier = Modifier.fillMaxSize()) {
             AppBackground()
@@ -71,52 +61,21 @@ fun SolmazApp(vm: StudyViewModel) {
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .windowInsetsPadding(
-                        WindowInsets.safeDrawing.only(
-                            WindowInsetsSides.Top + WindowInsetsSides.Horizontal
-                        )
-                    )
+                    .windowInsetsPadding(WindowInsets.safeDrawing)
             ) {
-                when (tab) {
-                    0 -> TodayScreen(
-                        vm = vm,
-                        onAdd = { addForDay = it },
-                        onDelete = vm::deleteSession
+                if (viewModel.sessionActive) {
+                    ReviewSessionScreen(
+                        vm = viewModel,
+                        onExit = { viewModel.exitSession() }
                     )
-
-                    1 -> CalendarScreen(
-                        vm = vm,
-                        onAdd = { addForDay = it },
-                        onDelete = vm::deleteSession,
-                        onShiftMonth = vm::shiftMonth,
-                        onToday = { vm.goToMonthOf(vm.today.epochDay) }
+                } else {
+                    TodayScreen(
+                        vm = viewModel,
+                        onStart = { viewModel.startSession() },
+                        loadError = loadError
                     )
-
-                    else -> StatsScreen(vm = vm)
                 }
             }
-
-            GlassTabBar(
-                selected = tab,
-                onSelect = { tab = it },
-                modifier = Modifier
-                    .align(Alignment.BottomCenter)
-                    .windowInsetsPadding(WindowInsets.navigationBars)
-                    .padding(horizontal = 26.dp, vertical = 12.dp)
-                    .fillMaxWidth()
-            )
-        }
-
-        addForDay?.let { day ->
-            AddSessionDialog(
-                date = JalaliCalendar.fromEpochDay(day),
-                onDismiss = { addForDay = null },
-                onSave = { subject, minutes ->
-                    vm.addSession(day, subject, minutes)
-                    vm.selectDay(day)
-                    addForDay = null
-                }
-            )
         }
     }
 }
