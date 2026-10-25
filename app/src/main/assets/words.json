@@ -921,7 +921,7 @@
     {
       "id": "b104",
       "word": "zugelassen werden",
-      "meaning": "پذیرفته شدن",
+      "meaning": "پذیرفته یا مجاز شناخته شدن؛ بسته به بافت",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1287,7 +1287,7 @@
     {
       "id": "b154",
       "word": "Kreditpunkte sammeln",
-      "meaning": "کردیت جمع کردن",
+      "meaning": "واحدهای اعتباری دانشگاهی (کردیت) کسب کردن",
       "lesson": 2,
       "unit": "1.2 Studium",
       "pos": "phrase",
@@ -1830,7 +1830,7 @@
     {
       "id": "b238",
       "word": "umstritten",
-      "meaning": "مورد مناقشه، بحث‌برانگیز",
+      "meaning": "مورد اختلاف یا مناقشه؛ بحث‌برانگیز",
       "lesson": 3,
       "unit": "1.3 Wissenschaft",
       "pos": "verb",
@@ -2036,7 +2036,7 @@
     {
       "id": "b263",
       "word": "zuckerfrei",
-      "meaning": "بدون قند",
+      "meaning": "بدون شکر؛ بدون قند افزوده (بسته به برچسب محصول)",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "adj/adv",
@@ -2054,7 +2054,7 @@
     {
       "id": "b265",
       "word": "reif",
-      "meaning": "رسیده",
+      "meaning": "رسیده (برای میوه)؛ بالغ یا پخته (برای فرد/تصمیم)",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "adj/adv",
@@ -2072,7 +2072,7 @@
     {
       "id": "b267",
       "word": "verderben",
-      "meaning": "فاسد شدن، خراب شدن",
+      "meaning": "فاسد شدن/کردن؛ خراب کردن؛ همچنین از بین بردن لذت چیزی",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "verb",
@@ -2478,7 +2478,7 @@
     {
       "id": "b326",
       "word": "zunehmen",
-      "meaning": "وزن اضافه کردن، چاق شدن",
+      "meaning": "افزایش یافتن؛ وزن اضافه کردن، بسته به بافت",
       "lesson": 4,
       "unit": "2.1 Ernährung",
       "pos": "verb",
@@ -3099,7 +3099,7 @@
     {
       "id": "b405",
       "word": "unfruchtbar",
-      "meaning": "نابارور",
+      "meaning": "نابارور؛ همچنین برای زمین: کم‌حاصل",
       "lesson": 5,
       "unit": "2.2 Körper",
       "pos": "adj/adv",
@@ -3351,7 +3351,7 @@
     {
       "id": "b438",
       "word": "jdn. anstecken",
-      "meaning": "کسی را مبتلا کردن (بیماری دادن)",
+      "meaning": "کسی را به بیماری مسری مبتلا کردن؛ همچنین سرایت دادن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "verb",
@@ -3446,7 +3446,7 @@
     {
       "id": "b449",
       "word": "sich verletzen",
-      "meaning": "مجروح شدن",
+      "meaning": "آسیب دیدن یا به خود آسیب زدن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3455,7 +3455,7 @@
     {
       "id": "b450",
       "word": "verletzt werden",
-      "meaning": "زخمی شدن",
+      "meaning": "آسیب دیدن یا مجروح شدن",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3474,7 +3474,7 @@
     {
       "id": "b452",
       "word": "sich etw. brechen",
-      "meaning": "چیزی را شکستن (استخوان)",
+      "meaning": "استخوانی از بدن خود را شکستن (مثلاً دست یا پا)",
       "lesson": 6,
       "unit": "2.3 Gesundheit",
       "pos": "phrase",
@@ -3744,7 +3744,7 @@
     {
       "id": "b494",
       "word": "sich sportlich betätigen",
-      "meaning": "ورزش کردن، فعالیت ورزشی داشتن",
+      "meaning": "فعالیت ورزشی کردن",
       "lesson": 7,
       "unit": "2.4 Sport",
       "pos": "phrase",
@@ -4131,7 +4131,7 @@
     {
       "id": "b537",
       "word": "jdn. sperren",
-      "meaning": "کسی را محروم کردن",
+      "meaning": "دسترسی کسی را مسدود یا محدود کردن؛ تعلیق کردن",
       "lesson": 7,
       "unit": "2.4 Sport",
       "pos": "phrase",
@@ -4217,7 +4217,7 @@
     {
       "id": "b556",
       "word": "riechen",
-      "meaning": "بو کردن، بو دادن",
+      "meaning": "بو کردن یا بو دادن؛ بسته به ساختار جمله",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "verb",
@@ -4300,7 +4300,7 @@
     {
       "id": "b565",
       "word": "unbewusst",
-      "meaning": "ناخودآگاه",
+      "meaning": "ناخودآگاه؛ بدون آگاهی یا قصد آگاهانه",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "adj/adv",
@@ -4412,7 +4412,7 @@
     {
       "id": "b577",
       "word": "vernünftig",
-      "meaning": "معقول، عاقلانه",
+      "meaning": "عاقلانه؛ منطقی و سنجیده",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "adj/adv",
@@ -4493,7 +4493,7 @@
     {
       "id": "b587",
       "word": "verzweifelt",
-      "meaning": "درمانده، مأیوس",
+      "meaning": "مأیوس و درمانده؛ از شدت ناامیدی",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "adj/adv",
@@ -4529,7 +4529,7 @@
     {
       "id": "b591",
       "word": "jdn. belasten",
-      "meaning": "کسی را تحت فشار گذاشتن",
+      "meaning": "کسی را تحت فشار گذاشتن؛ همچنین در حقوق: علیه کسی مدرک یا اتهام مطرح کردن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4592,7 +4592,7 @@
     {
       "id": "b598",
       "word": "sich verhalten",
-      "meaning": "رفتار کردن",
+      "meaning": "رفتار کردن؛ همچنین از نظر نسبت یا رابطه، وضعیتی داشتن",
       "lesson": 8,
       "unit": "2.5 Geist und Seele",
       "pos": "phrase",
@@ -4742,7 +4742,7 @@
     {
       "id": "b616",
       "word": "lesbisch",
-      "meaning": "همجنس‌گرای زن",
+      "meaning": "لزبین؛ مربوط به زنی که به زنان گرایش عاطفی/جنسی دارد",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "adj/adv",
@@ -4791,7 +4791,7 @@
     {
       "id": "b631",
       "word": "Stief-",
-      "meaning": "ناتنی (پیشوند)",
+      "meaning": "پیشوند به معنی «ناتنی»، مانند ناپدری یا خواهر ناتنی",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "noun",
@@ -4838,7 +4838,7 @@
     {
       "id": "b636",
       "word": "jdn. vernachlässigen",
-      "meaning": "کسی را نادیده گرفتن (بی‌توجهی کردن)",
+      "meaning": "از کسی غفلت کردن؛ به نیازهایش رسیدگی نکردن",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "phrase",
@@ -4912,7 +4912,7 @@
     {
       "id": "b644",
       "word": "nachsichtig",
-      "meaning": "بخشنده، اهل مدارا",
+      "meaning": "باگذشت؛ اهل مدارا و سخت‌گیری نکردن",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "adj/adv",
@@ -4921,7 +4921,7 @@
     {
       "id": "b645",
       "word": "verständnisvoll",
-      "meaning": "با درک، فهمیده",
+      "meaning": "با‌درک و همدل؛ کسی که شرایط دیگران را درک می‌کند",
       "lesson": 9,
       "unit": "3.1 Beziehungen",
       "pos": "adj/adv",
@@ -5060,7 +5060,7 @@
     {
       "id": "b662",
       "word": "selbstständig sein",
-      "meaning": "مستقل/خوداشتغال بودن",
+      "meaning": "خوداشتغال یا مستقل بودن",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "phrase",
@@ -5271,7 +5271,7 @@
     {
       "id": "b700",
       "word": "sich umschulen lassen",
-      "meaning": "بازآموزی حرفه‌ای شدن",
+      "meaning": "برای شغل دیگری آموزش دیدن؛ تغییر حرفه از راه بازآموزی",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "phrase",
@@ -5325,8 +5325,8 @@
     },
     {
       "id": "b710",
-      "word": "Vorgesetzte (!)",
-      "meaning": "سرپرست، مافوق",
+      "word": "der/die Vorgesetzte",
+      "meaning": "der/die Vorgesetzte",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "phrase",
@@ -5353,7 +5353,7 @@
     {
       "id": "b713",
       "word": "kündigen",
-      "meaning": "استعفا دادن / قرارداد را لغو کردن",
+      "meaning": "استعفا دادن؛ یا قرارداد/اشتراک را فسخ کردن، بسته به فاعل و بافت",
       "lesson": 10,
       "unit": "3.2 Arbeit und Beruf",
       "pos": "verb",
@@ -5821,7 +5821,7 @@
     {
       "id": "b768",
       "word": "verdienen",
-      "meaning": "درآمد داشتن، سزاوار بودن",
+      "meaning": "پول درآوردن؛ همچنین سزاوار چیزی بودن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "verb",
@@ -5935,7 +5935,7 @@
     {
       "id": "b789",
       "word": "über die Runden kommen",
-      "meaning": "گذران زندگی کردن",
+      "meaning": "از پس هزینه‌های زندگی برآمدن؛ دخل‌وخرج را جور کردن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -5954,7 +5954,7 @@
     {
       "id": "b791",
       "word": "verschuldet sein",
-      "meaning": "بدهکار بودن",
+      "meaning": "بدهکار بودن؛ زیر بار بدهی بودن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -5963,7 +5963,7 @@
     {
       "id": "b792",
       "word": "zahlungsunfähig sein",
-      "meaning": "ناتوان از پرداخت بودن",
+      "meaning": "توان پرداخت بدهی‌ها را نداشتن؛ ورشکسته بودن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -6056,7 +6056,7 @@
     {
       "id": "b804",
       "word": "Studiengebühren einführen",
-      "meaning": "شهریه برقرار کردن",
+      "meaning": "شهریهٔ دانشگاه را برقرار کردن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -6065,7 +6065,7 @@
     {
       "id": "b806",
       "word": "Studiengebühren abschaffen",
-      "meaning": "شهریه را لغو کردن",
+      "meaning": "شهریهٔ دانشگاه را لغو کردن",
       "lesson": 11,
       "unit": "3.3 Geld",
       "pos": "phrase",
@@ -6139,7 +6139,7 @@
     {
       "id": "b819",
       "word": "unter Zeitdruck stehen",
-      "meaning": "زیر فشار زمان بودن",
+      "meaning": "تحت فشار زمانی بودن",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6148,7 +6148,7 @@
     {
       "id": "b820",
       "word": "sich verzögern",
-      "meaning": "به تأخیر افتادن",
+      "meaning": "با تأخیر مواجه شدن؛ دیرتر رخ دادن",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6157,7 +6157,7 @@
     {
       "id": "b821",
       "word": "sich verlängern",
-      "meaning": "طولانی شدن، تمدید شدن",
+      "meaning": "طولانی‌تر شدن؛ تمدید شدن (بسته به بافت)",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6202,7 +6202,7 @@
     {
       "id": "b826",
       "word": "sich (D) Zeit lassen",
-      "meaning": "وقت گذاشتن، عجله نکردن",
+      "meaning": "برای کاری وقت گذاشتن؛ عجله نکردن",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6314,7 +6314,7 @@
     {
       "id": "b838",
       "word": "kurzfristig",
-      "meaning": "کوتاه‌مدت، فوری",
+      "meaning": "در کوتاه‌مدت؛ با مهلت یا فاصلهٔ زمانی کم",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "adj/adv",
@@ -6332,7 +6332,7 @@
     {
       "id": "b840",
       "word": "nachhaltig",
-      "meaning": "پایدار",
+      "meaning": "پایدار؛ قابل تداوم در بلندمدت و با کمترین آسیب محیطی",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "adj/adv",
@@ -6395,7 +6395,7 @@
     {
       "id": "b854",
       "word": "künftig",
-      "meaning": "آینده، در آینده",
+      "meaning": "در آینده؛ از این پس",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "adj/adv",
@@ -6452,7 +6452,7 @@
     {
       "id": "b861",
       "word": "mit zunehmendem Alter",
-      "meaning": "با بالا رفتن سن",
+      "meaning": "با افزایش سن",
       "lesson": 12,
       "unit": "3.4 Zeit",
       "pos": "phrase",
@@ -6570,7 +6570,7 @@
     {
       "id": "b877",
       "word": "wandern",
-      "meaning": "پیاده‌روی کوهستانی کردن",
+      "meaning": "پیاده‌روی طولانی یا طبیعت‌گردی کردن",
       "lesson": 13,
       "unit": "3.5 Freizeit",
       "pos": "verb",
@@ -6921,7 +6921,7 @@
     {
       "id": "b919",
       "word": "sich niederlassen",
-      "meaning": "سکونت گزیدن",
+      "meaning": "در جایی ساکن شدن؛ همچنین مطب یا کسب‌وکاری راه‌اندازی کردن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -6930,7 +6930,7 @@
     {
       "id": "b920",
       "word": "siedeln",
-      "meaning": "سکنی گزیدن",
+      "meaning": "در جایی سکونت گزیدن؛ اسکان یافتن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "verb",
@@ -6957,7 +6957,7 @@
     {
       "id": "b923",
       "word": "städtisch",
-      "meaning": "شهری",
+      "meaning": "شهری؛ مربوط به شهر",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "adj/adv",
@@ -7084,7 +7084,7 @@
     {
       "id": "b939",
       "word": "jdn. ausgrenzen",
-      "meaning": "کسی را طرد کردن",
+      "meaning": "کسی را از گروه کنار گذاشتن؛ طرد یا排除 کردن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7151,7 +7151,7 @@
     {
       "id": "b949",
       "word": "obdachlos",
-      "meaning": "بی‌خانمان",
+      "meaning": "بی‌سرپناه؛ فاقد محل سکونت ثابت",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "adj/adv",
@@ -7214,7 +7214,7 @@
     {
       "id": "b963",
       "word": "sich integrieren",
-      "meaning": "ادغام شدن",
+      "meaning": "در یک جامعه یا گروه جا افتادن و ادغام شدن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7232,7 +7232,7 @@
     {
       "id": "b966",
       "word": "sich einbürgern lassen",
-      "meaning": "تابعیت گرفتن",
+      "meaning": "برای دریافت تابعیت اقدام کردن؛ تابعیت کشور را گرفتن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "phrase",
@@ -7268,7 +7268,7 @@
     {
       "id": "b971",
       "word": "weltoffen",
-      "meaning": "جهان‌گرا، منفتح",
+      "meaning": "روادار و پذیرا نسبت به فرهنگ‌ها و دیدگاه‌های گوناگون",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "verb",
@@ -7342,7 +7342,7 @@
     {
       "id": "b980",
       "word": "mitbestimmen",
-      "meaning": "در تصمیم‌گیری مشارکت کردن",
+      "meaning": "در تصمیم‌گیری سهم و حق مشارکت داشتن",
       "lesson": 14,
       "unit": "4.1 Bevölkerung und Gesellschaft",
       "pos": "verb",
@@ -7660,7 +7660,7 @@
     {
       "id": "b1020",
       "word": "knapp",
-      "meaning": "کوتاه، مختصر",
+      "meaning": "کم یا محدود؛ به‌سختی کافی؛ همچنین کوتاه و موجز، بسته به بافت",
       "lesson": 15,
       "unit": "4.2 Sprache",
       "pos": "adj/adv",
@@ -7893,7 +7893,7 @@
     {
       "id": "b1056",
       "word": "Strahlung abgeben",
-      "meaning": "تابش پخش کردن",
+      "meaning": "تابش ساطع کردن؛ پرتو منتشر کردن",
       "lesson": 16,
       "unit": "4.3 Energie",
       "pos": "phrase",
@@ -7977,7 +7977,7 @@
     {
       "id": "b1065",
       "word": "nach Öl bohren",
-      "meaning": "دنبال نفت حفاری کردن",
+      "meaning": "برای یافتن یا استخراج نفت حفاری کردن",
       "lesson": 16,
       "unit": "4.3 Energie",
       "pos": "phrase",
@@ -8107,7 +8107,7 @@
     {
       "id": "b1081",
       "word": "unterwegs sein",
-      "meaning": "در راه بودن",
+      "meaning": "در راه یا در حال رفت‌وآمد بودن",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "phrase",
@@ -8153,7 +8153,7 @@
     {
       "id": "b1086",
       "word": "pendeln",
-      "meaning": "رفت‌وآمد روزانه کردن",
+      "meaning": "به‌طور منظم بین خانه و محل کار/تحصیل رفت‌وآمد کردن",
       "lesson": 17,
       "unit": "4.4 Verkehr",
       "pos": "verb",
@@ -8597,7 +8597,7 @@
     {
       "id": "b1137",
       "word": "Urlaub haben",
-      "meaning": "مرخصی داشتن",
+      "meaning": "مرخصی بودن؛ روزهای تعطیلات داشتن",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "phrase",
@@ -8606,7 +8606,7 @@
     {
       "id": "b1138",
       "word": "Urlaub machen",
-      "meaning": "تعطیلات گذراندن",
+      "meaning": "به تعطیلات رفتن؛ تعطیلات گذراندن",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "phrase",
@@ -8624,7 +8624,7 @@
     {
       "id": "b1140",
       "word": "verreisen",
-      "meaning": "به سفر رفتن",
+      "meaning": "به سفر رفتن؛ مدتی از محل زندگی دور بودن",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "verb",
@@ -8767,7 +8767,7 @@
     {
       "id": "b1159",
       "word": "übernachten",
-      "meaning": "شب ماندن",
+      "meaning": "شب را در جایی گذراندن؛ شب‌مانی کردن",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "verb",
@@ -8984,7 +8984,7 @@
     {
       "id": "b1187",
       "word": "unberührt",
-      "meaning": "دست‌نخورده",
+      "meaning": "دست‌نخورده؛ تحت تأثیر قرار نگرفته",
       "lesson": 18,
       "unit": "4.5 Tourismus",
       "pos": "adj/adv",
@@ -9219,7 +9219,7 @@
     {
       "id": "b1217",
       "word": "Konkurs anmelden",
-      "meaning": "اعلام ورشکستگی کردن",
+      "meaning": "اعلام ورشکستگی کردن؛ درخواست رسمی رسیدگی به ورشکستگی دادن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "phrase",
@@ -9311,7 +9311,7 @@
     {
       "id": "b1236",
       "word": "schrumpfen",
-      "meaning": "کوچک شدن، کاهش یافتن",
+      "meaning": "کوچک یا کم شدن؛ کاهش یافتن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "verb",
@@ -9469,7 +9469,7 @@
     {
       "id": "b1257",
       "word": "Waren absetzen",
-      "meaning": "کالا فروختن",
+      "meaning": "کالاها را فروختن یا در بازار توزیع کردن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "phrase",
@@ -9488,7 +9488,7 @@
     {
       "id": "b1259",
       "word": "neue Märkte erschließen",
-      "meaning": "بازارهای جدید باز کردن",
+      "meaning": "وارد بازارهای جدید شدن؛ بازارهای تازه‌ای برای فروش ایجاد کردن",
       "lesson": 19,
       "unit": "4.6 Wirtschaft",
       "pos": "phrase",
@@ -9673,7 +9673,7 @@
     {
       "id": "b1282",
       "word": "stabil",
-      "meaning": "پایدار، محکم",
+      "meaning": "باثبات؛ محکم و پایدار",
       "lesson": 20,
       "unit": "4.7 Technik",
       "pos": "adj/adv",
@@ -10464,7 +10464,7 @@
     {
       "id": "b1386",
       "word": "sich berieseln lassen",
-      "meaning": "بی‌فکر تماشا کردن (غرق شدن در رسانه)",
+      "meaning": "منفعلانه در معرض برنامه یا محتوای رسانه‌ای قرار گرفتن؛ بدون تمرکز خاص تماشا/گوش کردن",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "phrase",
@@ -10482,7 +10482,7 @@
     {
       "id": "b1388",
       "word": "seicht",
-      "meaning": "سطحی",
+      "meaning": "کم‌عمق؛ همچنین سطحی و فاقد عمق فکری",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "adj/adv",
@@ -10646,7 +10646,7 @@
     {
       "id": "b1409",
       "word": "jdn. mobben",
-      "meaning": "کسی را آزار روانی دادن",
+      "meaning": "کسی را مکرراً آزار و اذیت کردن؛ قلدری کردن",
       "lesson": 21,
       "unit": "4.8 Medien",
       "pos": "phrase",
@@ -10756,7 +10756,7 @@
     {
       "id": "b1425",
       "word": "strafbar",
-      "meaning": "قابل مجازات",
+      "meaning": "جرم محسوب‌شونده؛ قابل مجازات قانونی",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "adj/adv",
@@ -10858,7 +10858,7 @@
     {
       "id": "b1442",
       "word": "jdn. anzeigen",
-      "meaning": "از کسی شکایت کردن (گزارش به پلیس)",
+      "meaning": "کسی را به پلیس یا مرجع قانونی گزارش کردن؛ از او شکایت رسمی کردن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "phrase",
@@ -11031,7 +11031,7 @@
     {
       "id": "b1467",
       "word": "urteilen",
-      "meaning": "حکم دادن، قضاوت کردن",
+      "meaning": "قضاوت کردن؛ دربارهٔ چیزی حکم یا نظر دادن",
       "lesson": 22,
       "unit": "4.9 Recht und Gesetz",
       "pos": "verb",
@@ -11226,7 +11226,7 @@
     {
       "id": "b1496",
       "word": "wiedergeboren werden",
-      "meaning": "دوباره متولد شدن",
+      "meaning": "دوباره متولد شدن؛ در باورهای دینی: تناسخ یافتن",
       "lesson": 23,
       "unit": "4.10 Religion",
       "pos": "phrase",
@@ -11262,7 +11262,7 @@
     {
       "id": "b1500",
       "word": "jdn. trauen",
-      "meaning": "کسی را عقد کردن (مراسم ازدواج)",
+      "meaning": "ازدواج دو نفر را به‌صورت رسمی ثبت/اجرا کردن (برای مأمور عقد)",
       "lesson": 23,
       "unit": "4.10 Religion",
       "pos": "phrase",
@@ -11469,7 +11469,7 @@
     {
       "id": "b1522",
       "word": "umweltfreundlich",
-      "meaning": "دوستدار محیط زیست",
+      "meaning": "سازگار با محیط‌زیست؛ کم‌آسیب برای محیط",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "adj/adv",
@@ -11708,7 +11708,7 @@
     {
       "id": "b1551",
       "word": "sich erwärmen",
-      "meaning": "گرم شدن",
+      "meaning": "گرم شدن؛ همچنین به چیزی علاقه‌مند یا مشتاق شدن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11764,7 +11764,7 @@
     {
       "id": "b1557",
       "word": "klimaschädlich",
-      "meaning": "مضر برای اقلیم",
+      "meaning": "آسیب‌زا برای اقلیم؛ موجب افزایش اثرات تغییرات اقلیمی",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "adj/adv",
@@ -11773,7 +11773,7 @@
     {
       "id": "b1558",
       "word": "klimafreundlich",
-      "meaning": "دوستدار اقلیم",
+      "meaning": "سازگار با اقلیم؛ دارای اثر منفی کمتر بر تغییرات اقلیمی",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "adj/adv",
@@ -11782,7 +11782,7 @@
     {
       "id": "b1559",
       "word": "klimaschonend",
-      "meaning": "سازگار با اقلیم",
+      "meaning": "با اثر کمتر بر اقلیم؛ کم‌کنندهٔ آسیب‌های اقلیمی",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "adj/adv",
@@ -11812,7 +11812,7 @@
     {
       "id": "b1562",
       "word": "Wald abholzen",
-      "meaning": "جنگل را قطع کردن",
+      "meaning": "درختان جنگل را قطع کردن؛ جنگل‌زدایی کردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "phrase",
@@ -11822,7 +11822,7 @@
     {
       "id": "b1563",
       "word": "roden",
-      "meaning": "درخت‌زدایی کردن",
+      "meaning": "درختان و پوشش گیاهی را از زمین پاک کردن؛ زمین را برای کشت آماده کردن",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "verb",
@@ -11849,7 +11849,7 @@
     {
       "id": "b1566",
       "word": "schmelzen",
-      "meaning": "ذوب شدن",
+      "meaning": "ذوب شدن یا ذوب کردن؛ بسته به کاربرد",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "verb",
@@ -12054,7 +12054,7 @@
     {
       "id": "b1590",
       "word": "verdunsten",
-      "meaning": "تبخیر شدن",
+      "meaning": "تبخیر شدن، به‌ویژه از سطح مایع",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "verb",
@@ -12121,7 +12121,7 @@
     {
       "id": "b1598",
       "word": "versiegen",
-      "meaning": "خشک شدن (منبع آب)",
+      "meaning": "خشک یا قطع شدن (مثلاً جریان آب یا منبع)",
       "lesson": 24,
       "unit": "5.1 Die Erde",
       "pos": "verb",
@@ -12681,7 +12681,7 @@
     {
       "id": "b1656",
       "word": "mutieren",
-      "meaning": "جهش یافتن",
+      "meaning": "جهش ژنتیکی پیدا کردن؛ دچار جهش شدن",
       "lesson": 25,
       "unit": "5.2 Biologie",
       "pos": "verb",
@@ -12912,7 +12912,7 @@
     {
       "id": "b1691",
       "word": "sich / etw. auflösen",
-      "meaning": "حل شدن/حل کردن",
+      "meaning": "حل شدن یا حل کردن؛ همچنین منحل شدن/کردن، بسته به بافت",
       "lesson": 26,
       "unit": "5.3 Chemie",
       "pos": "phrase",
@@ -12921,7 +12921,7 @@
     {
       "id": "b1692",
       "word": "sich / etw. zersetzen",
-      "meaning": "تجزیه شدن/تجزیه کردن",
+      "meaning": "تجزیه شدن یا تجزیه کردن",
       "lesson": 26,
       "unit": "5.3 Chemie",
       "pos": "phrase",
@@ -12977,7 +12977,7 @@
     {
       "id": "b1698",
       "word": "verdampfen",
-      "meaning": "بخار شدن",
+      "meaning": "بخار شدن؛ تبخیر شدن",
       "lesson": 26,
       "unit": "5.3 Chemie",
       "pos": "verb",
@@ -12986,7 +12986,7 @@
     {
       "id": "b1699",
       "word": "organisch",
-      "meaning": "آلی",
+      "meaning": "آلی؛ همچنین مربوط به اندام‌ها و بدن، بسته به بافت",
       "lesson": 26,
       "unit": "5.3 Chemie",
       "pos": "adj/adv",
