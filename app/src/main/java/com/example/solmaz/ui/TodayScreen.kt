@@ -80,6 +80,8 @@ fun TodayScreen(
     onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
     speechRate: Float = 0.7f,
     onSpeechRate: (Float) -> Unit = {},
+    chartDays: Int = 14,
+    onChartDays: (Int) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
     val items = vm.items()
@@ -100,7 +102,7 @@ fun TodayScreen(
             item { SectionTitle("جعبه‌های لایتنر") }
             item { LeitnerBoxes(vm) }
             item { SectionTitle("نمودار پیشرفت") }
-            item { ProgressChart(vm) }
+            item { DailyChart(vm, chartDays, onChartDays) }
             item { PreviousLessonsCard(vm) }
             item { Legend() }
 
@@ -407,32 +409,69 @@ private fun LeitnerBoxes(vm: TodayViewModel) {
 
 private fun Pink400() = Pink300
 
-/** One bar per lesson (lesson 1 on the right): light = read, dark = learned (box 4 and up). */
+/** Words read per day over the last N days (N is chosen by the learner); today is the right-most bar. */
 @Composable
-private fun ProgressChart(vm: TodayViewModel) {
-    val bars = vm.lessonBars()
-    val read = vm.totalWords - vm.unseenCount()
+private fun DailyChart(vm: TodayViewModel, days: Int, onDays: (Int) -> Unit) {
+    val counts = vm.dailyCounts(days)
+    val top = (counts.maxOrNull() ?: 0).coerceAtLeast(1)
     GlassCard(modifier = Modifier.fillMaxWidth(), contentPadding = PaddingValues(16.dp)) {
-        Canvas(modifier = Modifier.fillMaxWidth().height(96.dp)) {
-            if (bars.isEmpty()) return@Canvas
-            val gap = 4.dp.toPx()
-            val barWidth = (size.width - gap * (bars.size - 1)) / bars.size
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "${counts.sum().fa} لغت",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = Pink500
+                )
+                Text(
+                    text = "میانگین: ${vm.dailyAverage(days).fa}",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = InkSoft
+                )
+            }
+            StepButton("−") { onDays((days - 1).coerceAtLeast(2)) }
+            Text(
+                text = "${days.fa} روز",
+                style = MaterialTheme.typography.labelLarge,
+                color = Ink,
+                modifier = Modifier.padding(horizontal = 10.dp)
+            )
+            StepButton("+") { onDays((days + 1).coerceAtMost(60)) }
+        }
+        Spacer(Modifier.height(12.dp))
+        Canvas(modifier = Modifier.fillMaxWidth().height(110.dp)) {
+            val n = counts.size
+            val gap = (if (n > 30) 2.dp else 4.dp).toPx()
+            val barWidth = (size.width - gap * (n - 1)) / n
             val radius = CornerRadius(barWidth / 3f, barWidth / 3f)
-            bars.forEachIndexed { i, bar ->
-                val x = size.width - (i + 1) * barWidth - i * gap
-                drawRoundRect(Pink100, Offset(x, 0f), Size(barWidth, size.height), radius)
-                val readHeight = size.height * bar.read
-                drawRoundRect(Pink300, Offset(x, size.height - readHeight), Size(barWidth, readHeight), radius)
-                val strongHeight = size.height * bar.strong
-                drawRoundRect(Pink500, Offset(x, size.height - strongHeight), Size(barWidth, strongHeight), radius)
+            counts.forEachIndexed { index, count ->
+                val fromRight = n - 1 - index
+                val x = size.width - (fromRight + 1) * barWidth - fromRight * gap
+                val barHeight = if (count == 0) 3.dp.toPx() else size.height * count / top
+                val color = when {
+                    count == 0 -> Pink100
+                    fromRight == 0 -> Pink500
+                    else -> Pink300
+                }
+                drawRoundRect(color, Offset(x, size.height - barHeight), Size(barWidth, barHeight), radius)
             }
         }
-        Spacer(Modifier.height(8.dp))
-        Text(
-            text = "${read.fa} از ${vm.totalWords.fa} لغت خوانده شده • هر ستون یک درس",
-            style = MaterialTheme.typography.labelSmall,
-            color = InkSoft
-        )
+        Spacer(Modifier.height(4.dp))
+        Text("امروز", style = MaterialTheme.typography.labelSmall, color = Pink500)
+    }
+}
+
+@Composable
+private fun StepButton(label: String, onClick: () -> Unit) {
+    Box(
+        modifier = Modifier
+            .size(32.dp)
+            .clip(CircleShape)
+            .background(Pink100)
+            .clickable(onClick = onClick),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(label, color = Pink500, fontWeight = FontWeight.Bold)
     }
 }
 

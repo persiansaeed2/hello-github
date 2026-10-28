@@ -27,7 +27,15 @@ class ProfileStore(context: Context) {
             prefs.edit().putFloat(KEY_RATE, value).apply()
         }
 
+    /** How many past days the progress chart shows; chosen by the learner. */
+    var chartDays: Int
+        get() = prefs.getInt(KEY_DAYS, 14).coerceIn(2, 60)
+        set(value) {
+            prefs.edit().putInt(KEY_DAYS, value.coerceIn(2, 60)).apply()
+        }
+
     private companion object {
+        const val KEY_DAYS = "chart_days"
         const val KEY_RATE = "speech_rate"
         const val PREFS_NAME = "solmaz_profile"
         const val KEY_NAME = "name"

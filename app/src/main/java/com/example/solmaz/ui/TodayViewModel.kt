@@ -6,9 +6,11 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.solmaz.data.DailyLog
 import com.example.solmaz.data.ProgressStore
 import com.example.solmaz.model.JalaliCalendar
 import com.example.solmaz.model.JalaliDate
+import com.example.solmaz.study.DailyStats
 import com.example.solmaz.study.Leitner
 import com.example.solmaz.study.LessonPlan
 import com.example.solmaz.study.SessionBuilder
@@ -47,7 +49,8 @@ data class WordItem(
 class TodayViewModel(
     private val words: List<Word>,
     private val store: ProgressStore,
-    val todayEpochDay: Long = LocalDate.now().toEpochDay()
+    val todayEpochDay: Long = LocalDate.now().toEpochDay(),
+    private val dailyLog: DailyLog? = null
 ) : ViewModel() {
 
     var progress by mutableStateOf(store.load())
@@ -156,6 +159,17 @@ class TodayViewModel(
 
     val totalWords: Int get() = words.size
 
+    /** Words read on each of the last [days] days, oldest first; today is the last one. */
+    fun dailyCounts(days: Int): List<Int> =
+        (days - 1 downTo 0).map { back -> dailyLog?.count(todayEpochDay - back) ?: 0 }
+
+    /** Average words per day over the last [days] days, counting only days since the first study day. */
+    fun dailyAverage(days: Int): Int {
+        val first = dailyLog?.firstDay() ?: return 0
+        val windowStart = todayEpochDay - days + 1
+        return DailyStats.average(dailyCounts(days), (first - windowStart).toInt())
+    }
+
     // --------------------------------------------------------------- session
 
     var sessionQueue by mutableStateOf<List<Word>>(emptyList())
@@ -219,6 +233,7 @@ class TodayViewModel(
 
         progress = progress + (word.id to updated)
         store.save(progress)
+        dailyLog?.add(todayEpochDay, word.id)
 
         if (known) answeredCorrect++ else answeredWrong++
 
@@ -248,7 +263,8 @@ class TodayViewModel(
 
 class TodayViewModelFactory(
     private val words: List<Word>,
-    private val store: ProgressStore
+    private val store: ProgressStore,
+    private val dailyLog: DailyLog? = null
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
@@ -256,6 +272,6 @@ class TodayViewModelFactory(
         require(modelClass.isAssignableFrom(TodayViewModel::class.java)) {
             "Unknown ViewModel class: ${modelClass.name}"
         }
-        return TodayViewModel(words = words, store = store) as T
+        return TodayViewModel(words = words, store = store, dailyLog = dailyLog) as T
     }
 }

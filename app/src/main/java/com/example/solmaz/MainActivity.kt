@@ -23,6 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.solmaz.data.DailyLog
 import com.example.solmaz.data.PrefsProgressStore
 import com.example.solmaz.data.ProfileStore
 import com.example.solmaz.data.WordSource
@@ -47,7 +48,8 @@ class MainActivity : ComponentActivity() {
                 val factory = remember {
                     TodayViewModelFactory(
                         words = load.words,
-                        store = PrefsProgressStore(context.applicationContext)
+                        store = PrefsProgressStore(context.applicationContext),
+                        dailyLog = DailyLog(context.applicationContext)
                     )
                 }
                 val viewModel: TodayViewModel = viewModel(factory = factory)
@@ -64,6 +66,7 @@ class MainActivity : ComponentActivity() {
                 val profile = remember { ProfileStore(context.applicationContext) }
                 var userName by remember { mutableStateOf(profile.name) }
                 var speechRate by remember { mutableStateOf(profile.speechRate) }
+                var chartDays by remember { mutableStateOf(profile.chartDays) }
                 LaunchedEffect(speechRate) { speaker.speechRate = speechRate }
                 DisposableEffect(speaker) {
                     onDispose { speaker.shutdown() }
@@ -95,6 +98,11 @@ class MainActivity : ComponentActivity() {
                         onSpeechRate = {
                             speechRate = it
                             profile.speechRate = it
+                        },
+                        chartDays = chartDays,
+                        onChartDays = {
+                            chartDays = it
+                            profile.chartDays = it
                         }
                     )
                 }
@@ -115,7 +123,9 @@ fun SolmazApp(
     loadError: String? = null,
     onSpeak: (String, SpeechLang) -> Unit = { _, _ -> },
     speechRate: Float = 0.7f,
-    onSpeechRate: (Float) -> Unit = {}
+    onSpeechRate: (Float) -> Unit = {},
+    chartDays: Int = 14,
+    onChartDays: (Int) -> Unit = {}
 ) {
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Box(modifier = Modifier.fillMaxSize()) {
@@ -141,7 +151,9 @@ fun SolmazApp(
                         loadError = loadError,
                         onSpeak = onSpeak,
                         speechRate = speechRate,
-                        onSpeechRate = onSpeechRate
+                        onSpeechRate = onSpeechRate,
+                        chartDays = chartDays,
+                        onChartDays = onChartDays
                     )
                 }
             }
